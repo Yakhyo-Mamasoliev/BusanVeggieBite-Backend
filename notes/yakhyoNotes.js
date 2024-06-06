@@ -13,4 +13,4 @@
 6; // Git comments =
 // git reset --hard => (discards last changes)
 
-7; 
+7; // mongoose is a package for using MongoDB in Node.js applications. It provides a straight-forward, schema-based solution to model
