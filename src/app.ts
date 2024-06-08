@@ -1,30 +1,28 @@
-// app.ts == ejs file
-import express from "express";
-import path from "path";
-import router from "./router"; // we calling router
-import routerAdmin from "./routerAdmin";
+import express from "express"; // Import the Express framework
+import path from "path"; // Import the path module for handling file paths
+import router from "./router"; // Import the main application router
+import routerAdmin from "./routerAdmin"; // Import the admin-specific router
+
 /* 1-ENTRANCE */
-const app = express();
-app.use(express.static(path.join(__dirname, "public")));
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
+const app = express(); // Create an instance of an Express application
+
+app.use(express.static(path.join(__dirname, "public"))); // Serve static files from the 'public' directory
+app.use(express.urlencoded({ extended: true })); // Parse URL-encoded bodies (form data)
+app.use(express.json()); // Parse JSON bodies
 
 /* 2-SESSIONS*/
 
 /* 3-VIEWS*/
-app.set("views", path.join(__dirname, "views"));
-app.set("view engine", "ejs");
+app.set("views", path.join(__dirname, "views")); // Set the directory for the view templates
+app.set("view engine", "ejs"); // Set EJS as the view engine
 
 /* 4-ROUTERS*/
-app.use("/admin", routerAdmin); // SSR: EJS (Adminka)
-app.use("/", router); // REACT
+app.use("/admin", routerAdmin); // Use the admin router for routes starting with '/admin' (SSR: EJS (Admin))
 
-// Why we need Burak BackEnd  (2)
-// 1/SPA(Single Page Application bo`lgan Burakni userlar ishlatadigan REACT uchun REST API server uchun ishlatamiz
+app.use("/", router); // Use the main router for the root and other routes (SPA: REACT)
 
+// 1. We use SPA (Single Page Application) as a REST API server for REACT used by users
 // 2. Building Admin Site -SSR (ServerSideRendering)
-// backenda frontendni qurib olish(EJS frameworkida)
+// building the frontend in the backend (in the EJS framework)
 
-// Middleware Design Pattern => it is only directing requests to router(nothing else)
-
-export default app; //app ni filedan tashqariga export qilamiz. same as export.app
+export default app; // Export the app instance for use in other files

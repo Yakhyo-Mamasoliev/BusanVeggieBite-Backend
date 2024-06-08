@@ -9,6 +9,7 @@ function getDigits(input: string): string {
     const char = input[i];
     if (char >= "0" && char <= "9") {
       result += char;
+      //console.log(result);
     }
   }
 
@@ -17,7 +18,21 @@ function getDigits(input: string): string {
 
 console.log(getDigits("m14i1t"));
 
+/* 
+function getDigits(input) {
+  let result = "";
 
+  for (let i = 0; i < input.length; i++) {
+    const char = input[i];
+    if (char >= "0" && char <= "9") {
+      result += char;
+    }
+  }
+
+  return result;
+}
+
+console.log(getDigits("m14i1t")); */
 
 // // H-TASK:
 

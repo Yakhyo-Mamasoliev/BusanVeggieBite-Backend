@@ -1,7 +1,5 @@
-// modellarni Classlar yordamida quramiz
-
 class MemberService {
-  constructor() {}
+  constructor() {} // Constructor method
 }
 
-export default MemberService;
+export default MemberService; // Export the MemberService class

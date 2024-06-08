@@ -33,4 +33,20 @@
 
 10; // Chained Query in Mongoose 
 // adding additional queries for queries (query sorab unga yana shart yozolimiz, masalan shu shu userlarni top va yoshi shu bo  bolsin va hkz) 
-11;
+
+11; /*
+HTTP Requests: On the internet, your web browser sends requests to servers when you visit websites. These requests ask for specific information, like a webpage or data.
+
+Why Express: Express is a toolbox for building web applications in JavaScript. It provides tools and rules to handle requests and send responses. Express makes managing interactions, like viewing webpages or using app features, easier.
+
+Creating an Express App: Writing const app = express(); means "Let's create a web app using Express." Think of app as our workspace for building the website or app.
+
+HTTP Methods: These are actions for requests. For instance, GET gets information from a server, while POST adds data to a server.
+
+Routing: In Express, we use routes to direct requests to different parts of our app. If someone asks for /about, we show them info about our website using routes.
+
+Middleware: Middleware acts like a filter for requests, performing actions before they reach their final destination. It's useful for tasks like checking if a user is logged in or logging request info.
+*/
+
+
+12; 

@@ -8,30 +8,30 @@ const memberSchema = new Schema(
     memberType: {
       type: String,
       enum: MemberType,
-      default: MemberType.USER,
+      default: MemberType.USER, // Default member type is USER
     },
 
     memberStatus: {
       type: String,
       enum: MemberStatus,
-      default: MemberStatus.ACTIVE,
+      default: MemberStatus.ACTIVE, // Default member status is ACTIVE
     },
 
     memberNick: {
       type: String,
-      index: { unique: true, sparse: true }, // index-nickname should be unique
+      index: { unique: true, sparse: true }, // Index: nickname should be unique
     },
 
     memberPhone: {
       type: String,
-      index: { unique: true, sparse: true },
-      required: true, // have to insert number
+      index: { unique: true, sparse: true }, // Index: phone number should be unique
+      required: true, // Phone number is required
     },
 
     memberPassword: {
       type: String,
-      select: false, // by default no autofill
-      required: true,
+      select: false, // By default, no autofill for password
+      required: true, // Password is required
     },
 
     memberAddress: {
@@ -48,11 +48,11 @@ const memberSchema = new Schema(
 
     memberPoints: {
       type: Number,
-      default: 0,
+      default: 0, // Default member points is 0
     },
   },
-  { timestamps: true } // updatedAt, createdAt
+  { timestamps: true } // createdAt and updatedAt timestamps
 );
 
-// creating schema model
-export default mongoose.model("Member", memberSchema);
+// Creating schema model
+export default mongoose.model("Member", memberSchema); // Export the schema model

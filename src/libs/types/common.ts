@@ -1,3 +1,3 @@
 export interface T {
-  [key: string]: any; // value is any
+  [key: string]: any; // Interface allowing any string-keyed properties with any value type
 }

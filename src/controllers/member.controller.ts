@@ -1,9 +1,7 @@
-//  doim controllerlarni objectlar orqali hosil qilamiz
+import { Request, Response } from "express"; // Import Request and Response types from Express
+import { T } from "../libs/types/common"; // Import common types
+const memberController: T = {}; // Define an empty object later we write different methods inside
 
-import { Request, Response } from "express";
-import { T } from "../libs/types/common";
-const memberController: T = {};
 // REACT
 
-//member controllerni rooterda chaqirvolishlik uchun
-export default memberController;
+export default memberController; // Export the member controller for use in routers
