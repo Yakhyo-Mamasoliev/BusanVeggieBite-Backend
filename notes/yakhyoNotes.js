@@ -11,6 +11,11 @@
 5; // .env  file is commonly used to store environment variables in a project. These variables typically contain sensitive information or configuration settings that may vary between different environments (e.g., development, staging, production).
 
 6; // Git comments =
+// git add .
+// git commit -m "comment"
+// git push origin or master
+
+// git status
 // git reset --hard => (discards last changes)
 
 7; // mongoose is a package for using MongoDB in Node.js applications. It provides a straight-forward, schema-based solution to model
@@ -22,3 +27,10 @@
 // Two-Dot- parent path from "../types/common";
 
 // Three-Dot- parent-parent path from "../../types/common";
+
+9; // static method
+// Class ning static methodida instance yarata olmaymiz
+
+10; // Chained Query in Mongoose 
+// adding additional queries for queries (query sorab unga yana shart yozolimiz, masalan shu shu userlarni top va yoshi shu bo  bolsin va hkz) 
+11;
