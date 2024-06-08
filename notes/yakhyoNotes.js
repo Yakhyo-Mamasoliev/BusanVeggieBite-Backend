@@ -14,3 +14,11 @@
 // git reset --hard => (discards last changes)
 
 7; // mongoose is a package for using MongoDB in Node.js applications. It provides a straight-forward, schema-based solution to model
+
+8; // file path directory
+
+// One-Dot- current path from "./types/common";
+
+// Two-Dot- parent path from "../types/common";
+
+// Three-Dot- parent-parent path from "../../types/common";

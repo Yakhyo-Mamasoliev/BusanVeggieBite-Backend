@@ -1,5 +1,6 @@
 import express from "express";
 import path from "path";
+import router from "./router"; // we calling router
 
 /* 1-ENTRANCE */
 const app = express();
@@ -14,6 +15,6 @@ app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 
 /* 4-ROUTERS*/
+app.use("/", router); // Middleware Design Pattern => it is only directing requests to router(nothing else)
 
-export default app;
-app; //app ni filedan tashqariga export qilamiz. same as export.app
+export default app; //app ni filedan tashqariga export qilamiz. same as export.app
