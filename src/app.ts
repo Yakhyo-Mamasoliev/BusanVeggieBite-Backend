@@ -1,3 +1,4 @@
+// app.ts == ejs file
 import express from "express";
 import path from "path";
 import router from "./router"; // we calling router
