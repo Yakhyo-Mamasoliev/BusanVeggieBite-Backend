@@ -10,7 +10,8 @@ const restaurantController: T = {}; // Define an empty object for restaurant con
 restaurantController.goHome = (req: Request, res: Response) => {
   try {
     console.log("goHome");
-    res.send("Home Page"); // Send "Home Page" response
+    res.send("Home Page");
+    // response can be send | JSON | end | Redirect | render
   } catch (err) {
     console.log("Error, go home:", err); // Log error if any
   }
@@ -19,9 +20,9 @@ restaurantController.goHome = (req: Request, res: Response) => {
 restaurantController.getLogin = (req: Request, res: Response) => {
   try {
     console.log("Login Page"); // prints in terminal when it clicked on web-page
-    // Logic 
+    // Logic
     //Service model
-    // .. 
+    // ..
     // if error occurs immediately it catches error before executing next line
     res.send("Login Page"); // Send "Login Page" response
   } catch (err) {
@@ -35,6 +36,24 @@ restaurantController.getSignup = (req: Request, res: Response) => {
     res.send("SignUp Page"); // Send "SignUp Page" response
   } catch (err) {
     console.log("Error, SignUp Page:", err); // Log error if any
+  }
+};
+
+restaurantController.processLogin = (req: Request, res: Response) => {
+  try {
+    console.log("processLogin");
+    res.send("Done");
+  } catch (err) {
+    console.log("Error, SignUp Page:", err);
+  }
+};
+
+restaurantController.processSignup = (req: Request, res: Response) => {
+  try {
+    console.log("processSignup");
+    res.send("Done");
+  } catch (err) {
+    console.log("Error, processSignup:", err); // Log error if any
   }
 };
 

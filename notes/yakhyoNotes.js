@@ -68,7 +68,13 @@ PROJECT STANDARDS
     folder => kebab
     css => snake
 -Error handling 
-    
 
 
+
+Notes
+- Browser only accepts get, not update or delete methods. 
+- get only used for providing pages, while post is used for creating or updating data.
+- We mostly use get and post from postman:  
+    -get(requesting data from database), 
+    -post(creating, delete). This is most common case in many companies. 
 */

@@ -2,11 +2,19 @@ import express from "express";
 const routerAdmin = express.Router(); // we call Router method
 import restaurantController from "./controllers/restaurant.controller";
 
+// Restaurant
 routerAdmin.get("/", restaurantController.goHome); // get method, rooters are associated with endpoints/ endpoints-urls ./signUp
 
-routerAdmin.get("/login", restaurantController.getLogin);
+routerAdmin
+  .get("/login", restaurantController.getLogin)
+  .post("/login", restaurantController.processLogin);
 
-routerAdmin.get("/signup", restaurantController.getSignup);
+routerAdmin
+  .get("/signup", restaurantController.getSignup)
+  .post("/signup", restaurantController.processSignup);
 
-// to call routers we need to call them
-export default routerAdmin; // we use default when we need to use the most commonly or unique. no need to use {}
+// Product
+
+// User
+
+export default routerAdmin;
