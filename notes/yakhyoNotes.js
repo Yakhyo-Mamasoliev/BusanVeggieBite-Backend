@@ -65,7 +65,7 @@ PROJECT STANDARDS
 -Naming Standards
     function, method, variables =>  Camel case  
     class => Pascal
-    folder => kebab
+    folder file => kebab
     css => snake
 -Error handling 
 

@@ -1,7 +1,7 @@
 import express from "express"; // Import the Express framework
 import path from "path"; // Import the path module for handling file paths
 import router from "./router"; // Import the main application router
-import routerAdmin from "./routerAdmin"; // Import the admin-specific router
+import routerAdmin from "./router-admin"; // Import the admin-specific router
 import morgan from "morgan";
 import { MORGAN_FORMAT } from "./libs/config";
 
