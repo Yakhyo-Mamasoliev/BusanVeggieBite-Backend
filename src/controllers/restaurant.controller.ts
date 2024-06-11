@@ -9,6 +9,7 @@ const restaurantController: T = {}; // Define an empty object for restaurant con
 // creating goHome method
 restaurantController.goHome = (req: Request, res: Response) => {
   try {
+    console.log("goHome");
     res.send("Home Page"); // Send "Home Page" response
   } catch (err) {
     console.log("Error, go home:", err); // Log error if any
@@ -17,6 +18,11 @@ restaurantController.goHome = (req: Request, res: Response) => {
 
 restaurantController.getLogin = (req: Request, res: Response) => {
   try {
+    console.log("Login Page"); // prints in terminal when it clicked on web-page
+    // Logic 
+    //Service model
+    // .. 
+    // if error occurs immediately it catches error before executing next line
     res.send("Login Page"); // Send "Login Page" response
   } catch (err) {
     console.log("Error, Login Page:", err); // Log error if any
@@ -25,6 +31,7 @@ restaurantController.getLogin = (req: Request, res: Response) => {
 
 restaurantController.getSignup = (req: Request, res: Response) => {
   try {
+    console.log("SignupPage");
     res.send("SignUp Page"); // Send "SignUp Page" response
   } catch (err) {
     console.log("Error, SignUp Page:", err); // Log error if any

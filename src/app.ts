@@ -2,13 +2,15 @@ import express from "express"; // Import the Express framework
 import path from "path"; // Import the path module for handling file paths
 import router from "./router"; // Import the main application router
 import routerAdmin from "./routerAdmin"; // Import the admin-specific router
+import morgan from "morgan";
+import { MORGAN_FORMAT } from "./libs/config";
 
 /* 1-ENTRANCE */
 const app = express(); // Create an instance of an Express application
-
 app.use(express.static(path.join(__dirname, "public"))); // Serve static files from the 'public' directory
 app.use(express.urlencoded({ extended: true })); // Parse URL-encoded bodies (form data)
 app.use(express.json()); // Parse JSON bodies
+app.use(morgan(MORGAN_FORMAT));
 
 /* 2-SESSIONS*/
 

@@ -17,6 +17,9 @@
 
 // git status
 // git reset --hard => (discards last changes)
+// git log --oneline => shows git commits
+
+7; // mvm- minimum final product ( minimum features necessary to satisfy)
 
 7; // mongoose is a package for using MongoDB in Node.js applications. It provides a straight-forward, schema-based solution to model
 
@@ -48,5 +51,24 @@ Routing: In Express, we use routes to direct requests to different parts of our 
 Middleware: Middleware acts like a filter for requests, performing actions before they reach their final destination. It's useful for tasks like checking if a user is logged in or logging request info.
 */
 
+/* 
 
-12; 
+Lesson 40 - Loyihamizning standartlarini quramiz
+ 
+Darsimiz rejasi:
+- Loyihamizning standartlarini quramiz
+- API requestlari haqida gaplashamiz
+
+
+PROJECT STANDARDS
+-Login Standards (Morgan P)
+-Naming Standards
+    function, method, variables =>  Camel case  
+    class => Pascal
+    folder => kebab
+    css => snake
+-Error handling 
+    
+
+
+*/
