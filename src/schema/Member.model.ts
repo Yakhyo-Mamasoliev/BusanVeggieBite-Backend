@@ -20,6 +20,7 @@ const memberSchema = new Schema(
     memberNick: {
       type: String,
       index: { unique: true, sparse: true }, // Index: nickname should be unique
+      required: true,
     },
 
     memberPhone: {

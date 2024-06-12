@@ -34,8 +34,8 @@
 9; // static method
 // Class ning static methodida instance yarata olmaymiz
 
-10; // Chained Query in Mongoose 
-// adding additional queries for queries (query sorab unga yana shart yozolimiz, masalan shu shu userlarni top va yoshi shu bo  bolsin va hkz) 
+10; // Chained Query in Mongoose
+// adding additional queries for queries (query sorab unga yana shart yozolimiz, masalan shu shu userlarni top va yoshi shu bo  bolsin va hkz)
 
 11; /*
 HTTP Requests: On the internet, your web browser sends requests to servers when you visit websites. These requests ask for specific information, like a webpage or data.
@@ -70,11 +70,34 @@ PROJECT STANDARDS
 -Error handling 
 
 
-
 Notes
 - Browser only accepts get, not update or delete methods. 
 - get only used for providing pages, while post is used for creating or updating data.
 - We mostly use get and post from postman:  
     -get(requesting data from database), 
     -post(creating, delete). This is most common case in many companies. 
+
+
+Lesson 41 - Member Service Model (Admin Signup)
+
+Darsimiz rejasi:
+ - What is API snf its types
+ - We develop complete signup API for Adminka
+
+Notes
+- API stands for Application Programming Interface. It is kinda waiter takes orders from customer and go to chef and takes food and gives it to customer.
+
+types of API:
+    Traditional API
+    Rest API
+    GraphQL API
+    ...
+
+POSTMAN
+     - post request has 
+        body
+        header
+
+
+
 */
