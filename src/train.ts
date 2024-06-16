@@ -1,22 +1,50 @@
-// H2-TASK:
-// Shunday function tuzing, unga string argument pass bolsin. Function ushbu agrumentdagi digitlarni yangi stringda return qilsin
-// MASALAN: getDigits("m14i1t") return qiladi "141"
+// I-TASK:
 
-function getDigits(input: string): string {
-  let result: string = "";
+// Shunday function yozing, u parametridagi array ichida eng kop takrorlangan raqamni topib qaytarsin.
+// MASALAN: majorityElement([1,2,3,4,5,4,3,4]) return 4
 
-  for (let i = 0; i < input.length; i++) {
-    const char = input[i];
-    if (char >= "0" && char <= "9") {
-      result += char;
-      //console.log(result);
+function majorityElement(nums: number[]): number {
+  let majorityElement = nums[0];
+  let maxCount = 0;
+
+  for (let i = 0; i < nums.length; i++) {
+    let count = 0;
+    for (let j = 0; j < nums.length; j++) {
+      if (nums[i] === nums[j]) {
+        count++;
+      }
+    }
+
+    if (count > maxCount) {
+      maxCount = count;
+      majorityElement = nums[i];
     }
   }
 
-  return result;
+  return majorityElement;
 }
 
-console.log(getDigits("m14i1t"));
+console.log("return:", majorityElement([1, 2, 3, 4, 5, 4, 3, 4]));
+
+// // H2-TASK:
+// // Shunday function tuzing, unga string argument pass bolsin. Function ushbu agrumentdagi digitlarni yangi stringda return qilsin
+// // MASALAN: getDigits("m14i1t") return qiladi "141"
+
+// function getDigits(input: string): string {
+//   let result: string = "";
+
+//   for (let i = 0; i < input.length; i++) {
+//     const char = input[i];
+//     if (char >= "0" && char <= "9") {
+//       result += char;
+//       //console.log(result);
+//     }
+//   }
+
+//   return result;
+// }
+
+// console.log(getDigits("m14i1t"));
 
 /* 
 function getDigits(input) {
