@@ -48,12 +48,12 @@ class MemberService {
     return await this.memberModel.findById(member._id).exec();
   }
 
-  // SSR
+  /* SSR Login */
+
   public async processSignup(input: MemberInput): Promise<Member> {
     const exist = await this.memberModel
       .findOne({ memberType: MemberType.RESTAURANT })
       .exec(); // exec() is chain query method,
-    console.log("exist: ", exist);
     if (exist) throw new Errors(HttpCode.BAD_REQUEST, Message.CREATE_FAILED);
 
     const salt = await bcrypt.genSalt();

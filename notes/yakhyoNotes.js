@@ -109,7 +109,15 @@ POSTMAN
         
         - refactoring: simplifying algorithm
 
+45 LESSON: EJS - ADMIN FRONTEND DEVELOPMENT
+Plans: 
+- create admin frontend pages
+- create frontend css, image, javascript folder and files
+- call external packages in frontend and use bootstrap for css design
+- create header and footer
 
+Note: 
+- 
 
 
 
