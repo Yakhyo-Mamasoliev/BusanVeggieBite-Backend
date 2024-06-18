@@ -3,8 +3,7 @@ const routerAdmin = express.Router(); // we call Router method
 import restaurantController from "./controllers/restaurant.controller";
 
 // Restaurant
-routerAdmin.get("/", restaurantController.goHome); // get method, rooters are associated with endpoints/ endpoints-urls ./signUp
-
+routerAdmin.get("/", restaurantController.goHome);
 routerAdmin
   .get("/login", restaurantController.getLogin)
   .post("/login", restaurantController.processLogin);

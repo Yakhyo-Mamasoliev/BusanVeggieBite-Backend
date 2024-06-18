@@ -87,17 +87,32 @@ Darsimiz rejasi:
 Notes
 - API stands for Application Programming Interface. It is kinda waiter takes orders from customer and go to chef and takes food and gives it to customer.
 
-types of API:
+types of API (REQUEST):
     Traditional API
     Rest API
     GraphQL API
     ...
 
 POSTMAN
-     - post request has 
+    - post request has 
         body
         header
 
 
 
-*/
+    44 - LESSON
+    SPA: login va signup 
+    
+    2 TYPES OF BUILDING FRONTEND DEVELOPMENT
+        1. TRADITIONAL FD => BSSR(ADMIN) => EJS
+        2. MODERN FD => SPA(Users` application) => REACT LIBRARY
+        
+        - refactoring: simplifying algorithm
+
+
+
+
+
+
+
+        */
