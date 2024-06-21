@@ -5,6 +5,15 @@ import routerAdmin from "./router-admin"; // Import the admin-specific router
 import morgan from "morgan";
 import { MORGAN_FORMAT } from "./libs/config";
 
+import session from "express-session";
+import ConnectMongoDB from "connect-mongodb-session";
+
+const MongoDBStore = ConnectMongoDB(session);
+const store = new MongoDBStore({
+  uri: String(process.env.MONGODB_URI),
+  collection: "sessions",
+});
+
 /* 1-ENTRANCE */
 const app = express(); // Create an instance of an Express application
 app.use(express.static(path.join(__dirname, "public"))); // give access to all folders in 'public' folder
@@ -13,6 +22,17 @@ app.use(express.json()); // Parse JSON bodies
 app.use(morgan(MORGAN_FORMAT));
 
 /* 2-SESSIONS*/
+app.use(
+  session({
+    secret: String(process.env.SESSION_SECRET),
+    cookie: {
+      maxAge: 1000 * 60 * 60 * 3, // 3 hours
+    },
+    store: store,
+    resave: true,
+    saveUninitialized: true,
+  })
+);
 
 /* 3-VIEWS*/
 app.set("views", path.join(__dirname, "views")); // Set the directory for the view templates

@@ -1,20 +1,43 @@
-// J-TASK:
+// TASK K:
 
-// Shunday function yozing, u string qabul qilsin va string ichidagi eng uzun sozni qaytarsin.
-// MASALAN: findLongestWord("I come from Uzbekistan") return "Uzbekistan"
+// // Berilayotgan parametr tarkibida nechta unli harf bor
+// // ekanligini aniqlovchi function tuzing
+// // MASALAN: countVowels("string"); return 1
+// // Yuqoridagi misolda 'string' so'zi tarkibida yagona unli harf 'i'
+// // bo'lganligi uchun '1'ni qaytarmoqda
 
-function findLongestWord(sentence: string): string {
-  const words = sentence.split(" ");
-  let longestWord = "";
-  for (const word of words) {
-    if (word.length > longestWord.length) {
-      longestWord = word;
+function countVowels(input: string): number {
+  const vowels = "aeiouAEIOU";
+  let count = 0;
+
+  for (let char of input) {
+    if (vowels.includes(char)) {
+      count++;
     }
   }
-  return longestWord;
+
+  return count;
 }
 
-console.log("Longest word: ", findLongestWord("I come from Uzbekistan"));
+console.log("Vowels:", countVowels("string"));
+
+// // J-TASK:
+
+// // Shunday function yozing, u string qabul qilsin va string ichidagi eng uzun sozni qaytarsin.
+// // MASALAN: findLongestWord("I come from Uzbekistan") return "Uzbekistan"
+
+// function findLongestWord(sentence: string): string {
+//   const words = sentence.split(" ");
+//   let longestWord = "";
+//   for (const word of words) {
+//     if (word.length > longestWord.length) {
+//       longestWord = word;
+//     }
+//   }
+//   return longestWord;
+// }
+
+// console.log("Longest word: ", findLongestWord("I come from Uzbekistan"));
 
 // // I-TASK:
 

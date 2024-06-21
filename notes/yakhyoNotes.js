@@ -32,10 +32,10 @@
 // Three-Dot- parent-parent path from "../../types/common";
 
 9; // static method
-// Class ning static methodida instance yarata olmaymiz
+// we cannot create instance for static methods
 
 10; // Chained Query in Mongoose
-// adding additional queries for queries (query sorab unga yana shart yozolimiz, masalan shu shu userlarni top va yoshi shu bo  bolsin va hkz)
+// adding additional queries for queries
 
 11; /*
 HTTP Requests: On the internet, your web browser sends requests to servers when you visit websites. These requests ask for specific information, like a webpage or data.
@@ -52,12 +52,6 @@ Middleware: Middleware acts like a filter for requests, performing actions befor
 */
 
 /* 
-
-Lesson 40 - Loyihamizning standartlarini quramiz
- 
-Darsimiz rejasi:
-- Loyihamizning standartlarini quramiz
-- API requestlari haqida gaplashamiz
 
 
 PROJECT STANDARDS
@@ -80,7 +74,7 @@ Notes
 
 Lesson 41 - Member Service Model (Admin Signup)
 
-Darsimiz rejasi:
+Plans
  - What is API snf its types
  - We develop complete signup API for Adminka
 
@@ -120,7 +114,24 @@ Note:
 - 
 
 
+46 LESSON: Authentication - Sessions*
+- development of authentication process
+- developing checkAuthSessions API as a test
+- discussing how sessions work
+- create logout API 
+
+Notes:
+- 
 
 
 
-        */
+
+
+
+
+
+
+
+
+
+*/
