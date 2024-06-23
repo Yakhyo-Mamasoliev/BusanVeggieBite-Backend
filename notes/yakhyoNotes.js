@@ -1,44 +1,99 @@
-1; // .env Storing sensitive information
+/* train.ts from Martin`s notes
 
-2; // dependency => we need in production
-// devdependency => in development and testing
+ PROJECT STANDARDS
+-Login Standards (Morgan P)
+-Naming Standards
+    function, method, variables =>  Camel case  
+    class => Pascal
+    folder file => kebab
+    css => snake
+-Error handling 
 
-3; //  Moment.js is js library commonly used for handling date and time manipulation in JavaScript. It provides functionalities such as parsing, validating, manipulating, and formatting dates and times.
 
-4; // Static vs Dynamic Typing
-// Static vs. Dynamic defines how a language expects you to declare data types. Static typed languages require explicit definition of a data type when they create a piece of data (e.g. variable, parameter, return value). Dynamic languages are the opposite and can infer, or at least try to guess, the type that we're using.
+types of API (REQUEST):
+    Traditional API
+    Rest API
+    GraphQL API
+    ...
 
-5; // .env  file is commonly used to store environment variables in a project. These variables typically contain sensitive information or configuration settings that may vary between different environments (e.g., development, staging, production).
 
-6; // Git comments =
-// git add .
-// git commit -m "comment"
-// git push origin or master
+TYPES OF BUILDING FRONTEND DEVELOPMENT
+        1. TRADITIONAL FD => BSSR(ADMIN) => EJS
+        2. MODERN FD => SPA(Users` application) => REACT LIBRARY
 
-// git status
-// git reset --hard => (discards last changes)
-// git log --oneline => shows git commits
-// git commit --amend =>  is used in Git to modify the most recent commit (not yet pushed one only)
 
-7; // mvm- minimum final product ( minimum features necessary to satisfy)
 
-8; // mongoose is a package for using MongoDB in Node.js applications. It provides a straight-forward, schema-based solution to model
+Cookies
+ request join
+ self destroy
 
-8; // file path directory
+Validation(Database): 
+    Frontend Validation
+    Backend Validation
+    Database Validation
 
-// One-Dot- current path from "./types/common";
 
-// Two-Dot- parent path from "../types/common";
 
-// Three-Dot- parent-parent path from "../../types/common";
 
-9; // static method
-// we cannot create instance for static methods
 
-10; // Chained Query in Mongoose
-// adding additional queries for queries
 
-11; /*
+
+
+
+
+
+
+
+
+
+```javascript
+1; .env Storing sensitive information
+
+2; dependency => we need in production
+devdependency => in development and testing
+
+3; Moment.js is js library commonly used for handling date and time manipulation in JavaScript. It provides functionalities such as parsing, validating, manipulating, and formatting dates and times.
+
+4; Static vs Dynamic Typing
+Static vs. Dynamic defines how a language expects you to declare data types. Static typed languages require explicit definition of a data type when they create a piece of data (e.g. variable, parameter, return value). Dynamic languages are the opposite and can infer, or at least try to guess, the type that we're using.
+
+5; .env file is commonly used to store environment variables in a project. These variables typically contain sensitive information or configuration settings that may vary between different environments (e.g., development, staging, production).
+
+6; Git comments =
+git add .
+git commit -m "comment"
+git push origin or master
+
+git status
+git reset --hard => (discards last changes)
+git log --oneline => shows git commits
+git commit --amend => is used in Git to modify the most recent commit (not yet pushed one only)
+
+7; mvm- minimum final product ( minimum features necessary to satisfy)
+
+8; mongoose is a package for using MongoDB in Node.js applications. It provides a straight-forward, schema-based solution to model
+
+8; file path directory
+
+One-Dot- current path from "./types/common";
+
+Two-Dot- parent path from "../types/common";
+
+Three-Dot- parent-parent path from "../../types/common";
+
+9; static method
+we cannot create instance for static methods
+
+10; Chained Query in Mongoose
+adding additional queries for queries
+```
+
+
+
+
+
+
+
 HTTP Requests: On the internet, your web browser sends requests to servers when you visit websites. These requests ask for specific information, like a webpage or data.
 
 Why Express: Express is a toolbox for building web applications in JavaScript. It provides tools and rules to handle requests and send responses. Express makes managing interactions, like viewing webpages or using app features, easier.
@@ -55,14 +110,7 @@ Middleware: Middleware acts like a filter for requests, performing actions befor
 /* 
 
 
-PROJECT STANDARDS
--Login Standards (Morgan P)
--Naming Standards
-    function, method, variables =>  Camel case  
-    class => Pascal
-    folder file => kebab
-    css => snake
--Error handling 
+
 
 
 Notes
@@ -82,11 +130,6 @@ Plans
 Notes
 - API stands for Application Programming Interface. It is kinda waiter takes orders from customer and go to chef and takes food and gives it to customer.
 
-types of API (REQUEST):
-    Traditional API
-    Rest API
-    GraphQL API
-    ...
 
 POSTMAN
     - post request has 
@@ -98,9 +141,7 @@ POSTMAN
     44 - LESSON
     SPA: login va signup 
     
-    2 TYPES OF BUILDING FRONTEND DEVELOPMENT
-        1. TRADITIONAL FD => BSSR(ADMIN) => EJS
-        2. MODERN FD => SPA(Users` application) => REACT LIBRARY
+    2 
         
         - refactoring: simplifying algorithm
 
@@ -139,9 +180,10 @@ Plan:
 Notes: 
 - 
 
+48-Lesson: PRoduct Schema Model
 
-
-
+Notes: 
+- 
 
 
 
