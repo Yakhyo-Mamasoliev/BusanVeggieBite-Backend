@@ -18,6 +18,7 @@
 // git status
 // git reset --hard => (discards last changes)
 // git log --oneline => shows git commits
+// git commit --amend => 
 
 7; // mvm- minimum final product ( minimum features necessary to satisfy)
 
