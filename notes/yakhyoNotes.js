@@ -115,18 +115,28 @@ Note:
 
 
 46 LESSON: Authentication - Sessions*
-- development of authentication process
-- developing checkAuthSessions API as a test
-- discussing how sessions work
-- create logout API 
+1. development of authentication process
+2. developing checkAuthSessions API as a test
+3. discussing how sessions work
+4. create logout API 
 
-Notes:
+1.1 Authentication: 
+- we install connect-mongodb-session(^3.1.1) and express-session(^3.1.1)  in dependency, and install their types in dev dependency.
+    - "express-session" - A middleware for Express that manages user sessions by storing session data on the server side. It provides a way to create, manage, and destroy user sessions.     
+    - "connect-mongodb-session"  with express-session to store session data in MongoDB.
+
+- MongoDBStore - Exports a single function that returns a MongoDBStore class for storing sessions in MongoDB.
+
+
+47-Lesson: Product Controller
+Plan: 
+ - Create MVC related to Product
+ - Create restaurant verification middleware algorithm 
+ - learn how to create browser local variables 
+ - create algorithm of how to upload fil;es to server
+
+Notes: 
 - 
-
-
-
-
-
 
 
 
