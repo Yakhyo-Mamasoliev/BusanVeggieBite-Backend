@@ -18,11 +18,11 @@
 // git status
 // git reset --hard => (discards last changes)
 // git log --oneline => shows git commits
-// git commit --amend => 
+// git commit --amend =>  is used in Git to modify the most recent commit (not yet pushed one only)
 
 7; // mvm- minimum final product ( minimum features necessary to satisfy)
 
-7; // mongoose is a package for using MongoDB in Node.js applications. It provides a straight-forward, schema-based solution to model
+8; // mongoose is a package for using MongoDB in Node.js applications. It provides a straight-forward, schema-based solution to model
 
 8; // file path directory
 
