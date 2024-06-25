@@ -24,7 +24,7 @@ TYPES OF BUILDING FRONTEND DEVELOPMENT
 
 
 Cookies
- request join
+ request join (can attach to each req)
  self destroy
 
 Validation(Database): 
@@ -32,6 +32,16 @@ Validation(Database):
     Backend Validation
     Database Validation
 
+Authentication built 2 types
+1. Session
+2. Token
+
+
+Web Browser Storage
+1. local storage        => 
+2. session storage      => 
+3. cookie storage       => sessions
+4. cage storage         => images, files
 
 
 
@@ -39,11 +49,7 @@ Validation(Database):
 
 
 
-
-
-
-
-
+app file = Express file
 
 
 ```javascript
@@ -181,10 +187,7 @@ Notes:
 - 
 
 48-Lesson: PRoduct Schema Model
-
-Notes: 
-- 
-
-
-
 */
+
+//** 49-LESSON */
+
