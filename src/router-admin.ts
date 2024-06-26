@@ -31,7 +31,6 @@ routerAdmin.post(
   makeUploader("products").array("productImages", 5), // we can use also single not array
   productController.createNewProduct
 );
-
 routerAdmin.post(
   "/product/:id",
   restaurantController.verifyRestaurant,
