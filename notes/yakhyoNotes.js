@@ -187,7 +187,16 @@ Notes:
 - 
 
 48-Lesson: PRoduct Schema Model
+
+
+49-LESSON 
+
+- Auto migration using your project refers to the process of automatically updating your database schema based on changes made to your TypeScript models.
+
+
+
+
+
+
+
 */
-
-//** 49-LESSON */
-
