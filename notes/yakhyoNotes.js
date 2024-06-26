@@ -193,6 +193,8 @@ Notes:
 
 - Auto migration using your project refers to the process of automatically updating your database schema based on changes made to your TypeScript models.
 
+5-LESSON: Product - Service Model (getAllProducts)
+
 
 
 
