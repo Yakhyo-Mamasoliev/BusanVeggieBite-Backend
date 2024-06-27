@@ -1,19 +1,40 @@
-// M-TASK:
+// 2024-06-27
+// MIT 14
+// TASK N:
 
-// Shunday function yozing, u raqamlardan tashkil topgan array qabul qilsin va array ichidagi har bir raqam uchun raqamni ozi va hamda osha raqamni kvadratidan tashkil topgan object hosil qilib, hosil bolgan objectlarni array ichida qaytarsin.
-// MASALAN: getSquareNumbers([1, 2, 3]) return [{number: 1, square: 1}, {number: 2, square: 4}, {number: 3, square: 9}];
+// Parametr sifatida yagona string qabul qiladigan function tuzing.
+// Va bu function string'ni palindrom so'z yoki palindrom so'z emasligini aniqlab (boolean)
+// 'true' yokida 'false' qaytarsin.
+// MASALAN: palindromCheck("dad") return true; palindromCheck("son") return false;
+// Birinchi misolda 'dad' so'zini ikkala tarafdan o'qilganda ham bir xil ma'noni beradi (true)
+// Ikkinchi misolda 'son' so'zini ikkala tarafdan o'qilganda bir xil ma'noni bermaydi (false)
+// *Palindrom so'z deb o'ngdan chapga ham ~ chapdan o'ngga ham o'qilganda
+// bir xil ma'noni beradigan so'zga aytiladi
 
-function getSquareNumbers(
-  numbers: number[]
-): { number: number; square: number }[] {
-  return numbers.map((num) => ({
-    number: num,
-    square: num * num,
-  }));
+function palindromeCheck(word: string): boolean {
+  const reversedWord = word.split("").reverse().join("");
+  return word === reversedWord;
 }
 
-const result = getSquareNumbers([1, 2, 3]);
-console.log("result:", result);
+console.log(palindromeCheck("dad"));
+// console.log(palindromeCheck("number"));
+
+// // M-TASK:
+
+// // Shunday function yozing, u raqamlardan tashkil topgan array qabul qilsin va array ichidagi har bir raqam uchun raqamni ozi va hamda osha raqamni kvadratidan tashkil topgan object hosil qilib, hosil bolgan objectlarni array ichida qaytarsin.
+// // MASALAN: getSquareNumbers([1, 2, 3]) return [{number: 1, square: 1}, {number: 2, square: 4}, {number: 3, square: 9}];
+
+// function getSquareNumbers(
+//   numbers: number[]
+// ): { number: number; square: number }[] {
+//   return numbers.map((num) => ({
+//     number: num,
+//     square: num * num,
+//   }));
+// }
+
+// const result = getSquareNumbers([1, 2, 3]);
+// console.log("result:", result);
 
 // // L-TASK:
 

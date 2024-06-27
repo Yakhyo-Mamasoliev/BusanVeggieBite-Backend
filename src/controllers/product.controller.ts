@@ -1,9 +1,9 @@
-import { Request, Response } from "express";
+import { Request, Response } from "express"; //** types */
 import Errors, { HttpCode, Message } from "../libs/Errors";
 import { T } from "../libs/types/common";
 import ProductService from "../models/Product.service";
 import { ProductInput } from "../libs/types/product";
-import { AdminRequest } from "../libs/types/member";
+import { AdminRequest } from "../libs/types/member"; 
 
 const productService = new ProductService();
 

@@ -1,3 +1,12 @@
 export interface T {
-  [key: string]: any; // Interface allowing any string-keyed properties with any value type
+  [key: string]: any; //It can accept any value in ts
 }
+
+// eg;
+/** 
+ const myObject: T = {
+  name: "John Doe",
+  age: 30,
+  isEmployed: true,
+};
+ */

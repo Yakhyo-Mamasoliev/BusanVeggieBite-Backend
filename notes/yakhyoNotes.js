@@ -196,7 +196,13 @@ Notes:
 5-LESSON: Product - Service Model (getAllProducts)
 
 
+51-LESSON Service Model (getUsers, updateChosenUser)
+- develop getUsers API
+- develop updateChosenUser API
 
+Note: 
+
+- 
 
 
 
