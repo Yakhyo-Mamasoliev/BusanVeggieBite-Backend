@@ -1,21 +1,87 @@
 <%- include('includes/header') %>
 
+<link rel="stylesheet" type="text/css" href="/css/users.css" />
+
 <body>
-  <div class="card" style="width: 18rem">
-    <img
-      class="card-img-top"
-      src="https://media.istockphoto.com/id/1792849397/ko/%EC%82%AC%EC%A7%84/%EB%8F%99%EA%B6%81-%EC%9B%94%EC%A7%80%EC%97%B0%EB%AA%BB-%EB%82%A9%EC%A7%80%EA%B3%B5%EC%9B%90-%ED%95%B4%EC%A7%88%EB%85%98-%ED%95%9C%EA%B5%AD-%EC%A0%84%ED%86%B5-%EA%B1%B4%EC%B6%95%EB%AC%BC%EA%B3%BC-%EC%A0%95%EC%9B%90%EC%9D%B4-%EC%9E%88%EB%8A%94-%EB%8C%80%ED%95%9C%EB%AF%BC%EA%B5%AD%EC%9D%98-%EA%B2%BD%EC%A3%BC%EC%8B%9C-%EB%9E%9C%EB%93%9C%EB%A7%88%ED%81%AC-%EC%9C%A0%EC%A0%81%EC%A7%80.jpg?s=1024x1024&w=is&k=20&c=wv_o0UtsbwmB3pDL-00BhLrzK_SwUMuaigt__NU2adc="
-      alt="Card image cap"
-    />
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">
-        Some quick example text to build on the card title and make up the bulk
-        of the card's content.
-      </p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
+  <div class="users-container">
+    <% if(!member) { %>
+    <div class="navigation-menu">
+      <ul class="nav justify-content-center">
+        <li class="nav-item" style="cursor: pointer">
+          <a class="nav-link active" href="/admin/">Home</a>
+        </li>
+        <li class="nav-item" style="cursor: pointer">
+          <a class="nav-link" href="/admin/signup">SignUp</a>
+        </li>
+        <li class="nav-item" style="cursor: pointer">
+          <a class="nav-link" href="/admin/login">Login</a>
+        </li>
+      </ul>
     </div>
+
+    <div class="users-frame" style="color: #dddddd">
+      <div class="board" style="font-size: 40px">Please login first!</div>
+    </div>
+
+    <% } else { %>
+    <div class="navigation-menu">
+      <ul class="nav justify-content-center">
+        <li class="nav-item" style="cursor: pointer">
+          <a class="nav-link active" href="/admin/">Home</a>
+        </li>
+        <li class="nav-item" style="cursor: pointer">
+          <a class="nav-link" href="/admin/product/all">Menu</a>
+        </li>
+        <li class="nav-item" style="cursor: pointer">
+          <a class="nav-link" href="/admin/user/all">Users</a>
+        </li>
+        <li
+          class="nav-item"
+          style="cursor: pointer"
+          onclick="return confirm('Do you really want to logout?')"
+        >
+          <a class="nav-link" href="/admin/logout">Logout</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="users-frame">
+      <div class="board">
+        <div class="user-table">
+          <span class="header-name" style="margin-bottom: 30px"
+            >All Users List</span
+          >
+          <table class="table table-hover table-sm">
+            <thead class="thead-light">
+              <tr class="thead-light">
+                <th scope="col">No</th>
+                <th scope="col">Name</th>
+                <th scope="col">Phone</th>
+                <th scope="col">Status</th>
+              </tr>
+            </thead>
+            <!--  LOOP PRODUCTS: START  -->
+            <tbody style="background: white">
+              <td>1</td>
+              <td>David</td>
+              <td>821024697878</td>
+              <td style="width: 13%">
+                <select class="spec-select member-status">
+                  <option value="ACTIVE" selected>ACTIVE</option>
+                  <option value="BLOCK">BLOCK</option>
+                  <option value="DELETE">DELETE</option>
+                </select>
+              </td>
+            </tbody>
+            <!--  LOOP PRODUCTS: END  -->
+          </table>
+        </div>
+      </div>
+    </div>
+    <% } %>
   </div>
+
+  <script type="text/javascript" src="/js/users.js"></script>
 </body>
 
 <%- include('includes/footer') %>

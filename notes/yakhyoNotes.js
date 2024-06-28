@@ -200,10 +200,13 @@ Notes:
 - develop getUsers API
 - develop updateChosenUser API
 
-Note: 
+52-LESSON EJS - Publishing Admin Frontend
+- uploading CSS, JS, and image files to adminka frontend
+- uploading ejs files to adminka project
+- learning some animation packages which can be useful in frontend
 
-- 
 
+Note: 7.42
 
 
 
