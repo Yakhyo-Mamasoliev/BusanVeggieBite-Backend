@@ -208,6 +208,15 @@ Notes:
 
 Note: 7.42
 
+Lesson-53: EJS - Admin Login jarayoni tahlili 
+- types of Request
+- Admin login jarayoni tahlili
+- Admin logout jarayoni tahlili
 
+types of API (REQUEST):
+    - Traditional API (html elementlari asosida amalga oshiriladi, eg: request in form format )
+    - Rest API (React Project, (exchange of JSON data))
+    - GraphQL API
+    ...
 
 */
