@@ -3,7 +3,7 @@ import Errors, { HttpCode, Message } from "../libs/Errors";
 import { T } from "../libs/types/common";
 import ProductService from "../models/Product.service";
 import { ProductInput } from "../libs/types/product";
-import { AdminRequest } from "../libs/types/member"; 
+import { AdminRequest } from "../libs/types/member";
 
 const productService = new ProductService();
 
@@ -41,14 +41,14 @@ productController.createNewProduct = async (
 
     await productService.createNewProduct(data);
     res.send(
-      `<script> alert("Successfully creation!"); window.location.replace('admin/product/all') </script>`
+      `<script> alert("Successfully creation!"); window.location.replace('/admin/product/all') </script>`
     );
   } catch (err) {
     console.log("Error, createNewProduct:", err);
     const message =
       err instanceof Errors ? err.message : Message.SOMETHING_WENT_WRONG;
     res.send(
-      `<script> alert("${message}"); window.location.replace('admin/product/all') </script>`
+      `<script> alert("${message}"); window.location.replace('/admin/product/all') </script>`
     );
   }
 };

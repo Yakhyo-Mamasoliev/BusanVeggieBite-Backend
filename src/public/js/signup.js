@@ -21,7 +21,7 @@ $(function () {
         fileName = $(this)[0].files[0].name;
       }
       $(this).siblings(".upload-name").val(fileName);
-    }
+    }src/public/js/signup.js
   });
 });
 
