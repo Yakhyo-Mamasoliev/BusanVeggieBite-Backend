@@ -1,22 +1,41 @@
-// 2024-06-27
-// MIT 14
-// TASK N:
+// O-TASK:
+// Shunday function yozing, u har xil valuelardan iborat array qabul qilsin va array ichidagi sonlar yigindisini hisoblab chiqqan javobni qaytarsin.
+// MASALAN: calculateSumOfNumbers([10, "10", {son: 10}, true, 35]) return 45
 
-// Parametr sifatida yagona string qabul qiladigan function tuzing.
-// Va bu function string'ni palindrom so'z yoki palindrom so'z emasligini aniqlab (boolean)
-// 'true' yokida 'false' qaytarsin.
-// MASALAN: palindromCheck("dad") return true; palindromCheck("son") return false;
-// Birinchi misolda 'dad' so'zini ikkala tarafdan o'qilganda ham bir xil ma'noni beradi (true)
-// Ikkinchi misolda 'son' so'zini ikkala tarafdan o'qilganda bir xil ma'noni bermaydi (false)
-// *Palindrom so'z deb o'ngdan chapga ham ~ chapdan o'ngga ham o'qilganda
-// bir xil ma'noni beradigan so'zga aytiladi
+function calculateSumOfNumbers(arr: any[]): number {
+  let sum = 0;
 
-function palindromeCheck(word: string): boolean {
-  const reversedWord = word.split("").reverse().join("");
-  return word === reversedWord;
+  for (const item of arr) {
+    if (typeof item === "number") {
+      sum += item;
+    }
+  }
+
+  return sum;
 }
 
-console.log(palindromeCheck("dad"));
+const result = calculateSumOfNumbers([10, "10", { number: 10 }, true, 35]);
+console.log(result);
+
+// // 2024-06-27
+// // MIT 14
+// // TASK N:
+
+// // Parametr sifatida yagona string qabul qiladigan function tuzing.
+// // Va bu function string'ni palindrom so'z yoki palindrom so'z emasligini aniqlab (boolean)
+// // 'true' yokida 'false' qaytarsin.
+// // MASALAN: palindromCheck("dad") return true; palindromCheck("son") return false;
+// // Birinchi misolda 'dad' so'zini ikkala tarafdan o'qilganda ham bir xil ma'noni beradi (true)
+// // Ikkinchi misolda 'son' so'zini ikkala tarafdan o'qilganda bir xil ma'noni bermaydi (false)
+// // *Palindrom so'z deb o'ngdan chapga ham ~ chapdan o'ngga ham o'qilganda
+// // bir xil ma'noni beradigan so'zga aytiladi
+
+// function palindromeCheck(word: string): boolean {
+//   const reversedWord = word.split("").reverse().join("");
+//   return word === reversedWord;
+// }
+
+// console.log(palindromeCheck("dad"));
 // console.log(palindromeCheck("number"));
 
 // // M-TASK:
