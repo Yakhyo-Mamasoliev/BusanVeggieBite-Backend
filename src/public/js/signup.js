@@ -2,15 +2,16 @@ console.log("Signup frontend javascript file");
 
 $(function () {
   const fileTarget = $(".file-box .upload-hidden");
-  let fileName;
+  let filename;
 
   fileTarget.on("change", function () {
     if (window.FileReader) {
       const uploadFile = $(this)[0].files[0];
+      console.log("uploadFile:", uploadFile);
       const fileType = uploadFile["type"];
-      const validationType = ["image/jpg", "image/jpeg", "image/png"];
-      if (!validationType.includes(fileType)) {
-        alert("Only image/jpg, image/jpeg, image/png");
+      const validImageType = ["image/jpeg", "image/jpg", "image/png"];
+      if (!validImageType.includes(fileType)) {
+        alert("Please insert only jpeg, jpg and png!");
       } else {
         if (uploadFile) {
           console.log(URL.createObjectURL(uploadFile));
@@ -18,10 +19,10 @@ $(function () {
             .attr("src", URL.createObjectURL(uploadFile))
             .addClass("success");
         }
-        fileName = $(this)[0].files[0].name;
+        filename = $(this)[0].files[0].name;
       }
-      $(this).siblings(".upload-name").val(fileName);
-    }src/public/js/signup.js
+      $(this).siblings(".upload-name").val(filename);
+    }
   });
 });
 
@@ -33,24 +34,24 @@ function validateSignupForm() {
 
   if (
     memberNick === "" ||
+    memberPhone === "" ||
     memberPassword === "" ||
-    confirmPassword === "" ||
-    memberPhone === ""
+    confirmPassword === ""
   ) {
-    alert("Please insert all required inputs!");
+    alert("Please insert all required inputs");
     return false;
   }
 
   if (memberPassword !== confirmPassword) {
-    alert("The password differs,  please check!");
+    alert("Password differs, Please check!");
     return false;
   }
 
-  const memberImage = $(".member-image").get(0).files[0].name
+  const memberImage = $(".member-image").get(0).files[0]
     ? $(".member-image").get(0).files[0].name
     : null;
   if (!memberImage) {
-    alert("Please insert restaurant image");
+    alert("Please insert restaurant image!");
     return false;
   }
 }
