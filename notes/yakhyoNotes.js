@@ -3,10 +3,10 @@
  PROJECT STANDARDS
 -Login Standards (Morgan P)
 -Naming Standards
-    function, method, variables =>  Camel case  
-    class => Pascal
-    folder file => kebab
-    css => snake
+    function, method, variables =>  Camel case: addNumbers
+    class => Pascal:MyProfile
+    folder file => kebab:api-service.js
+    css => snake:header_container
 -Error handling 
 
 
@@ -28,9 +28,14 @@ Cookies
  self destroy
 
 Validation(Database): 
-    Frontend Validation
-    Backend Validation
-    Database Validation
+    Frontend Validation (Client)
+    Backend Validation(Server)
+    Database Validation(Schema)
+
+BURAK: Client | Server | Schema
+Nestar: Client | DTO(Data Transfer Object | Server | Schema
+
+DTO CLIENT <=> SERVER  
 
 Authentication built 2 types
 1. Session
@@ -74,6 +79,8 @@ git status
 git reset --hard => (discards last changes)
 git log --oneline => shows git commits
 git commit --amend => is used in Git to modify the most recent commit (not yet pushed one only)
+
+res.render("home");, it's telling the server to use a template named "home" to create a web page.
 
 7; mvm- minimum final product ( minimum features necessary to satisfy)
 
@@ -205,18 +212,23 @@ Notes:
 - uploading ejs files to adminka project
 - learning some animation packages which can be useful in frontend
 
-
-Note: 7.42
-
 Lesson-53: EJS - Admin Login jarayoni tahlili 
 - types of Request
 - Admin login jarayoni tahlili
 - Admin logout jarayoni tahlili
+
+LESSON54 - EJS - Frontend signup jarayonini develop qilamiz
+ - Learn jQuery
+ - Validation and frontend validation
+ - Build Image Preloading 
+ - Completing Adminka Signup
 
 types of API (REQUEST):
     - Traditional API (html elementlari asosida amalga oshiriladi, eg: request in form format )
     - Rest API (React Project, (exchange of JSON data))
     - GraphQL API
     ...
+
+
 
 */

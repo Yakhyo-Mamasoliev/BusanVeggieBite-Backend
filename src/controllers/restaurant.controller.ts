@@ -11,7 +11,7 @@ const restaurantController: T = {};
 restaurantController.goHome = (req: Request, res: Response) => {
   try {
     console.log("goHome");
-    res.render("home"); // send | render| redirect| json
+    res.render("home"); // send | render| redirect| json // res.render("home");, it's telling the server to use a template named "home" to create a web page.
   } catch (err) {
     console.log("Error, go home:", err);
     res.redirect("/admin");
