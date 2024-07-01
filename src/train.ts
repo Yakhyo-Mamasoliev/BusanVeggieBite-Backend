@@ -1,21 +1,41 @@
-// O-TASK:
-// Shunday function yozing, u har xil valuelardan iborat array qabul qilsin va array ichidagi sonlar yigindisini hisoblab chiqqan javobni qaytarsin.
-// MASALAN: calculateSumOfNumbers([10, "10", {son: 10}, true, 35]) return 45
+// P-TASK:
 
-function calculateSumOfNumbers(arr: any[]): number {
-  let sum = 0;
+// Shunday function yozing, u object qabul qilsin va arrayni object arrayga otkazib arrayni qaytarsin qaytarsin.
+// MASALAN: objectToArray( {a: 10, b: 20}) return [['a', 10], ['b', 20]]
 
-  for (const item of arr) {
-    if (typeof item === "number") {
-      sum += item;
+function objectToArray(obj: { [key: string]: any }): [string, any][] {
+  const result: [string, any][] = [];
+
+  for (const key in obj) {
+    if (obj.hasOwnProperty(key)) {
+      result.push([key, obj[key]]);
     }
   }
-
-  return sum;
+  return result;
 }
 
-const result = calculateSumOfNumbers([10, "10", { number: 10 }, true, 35]);
-console.log(result);
+const exampleObject = { a: 10, b: 20 };
+const result = objectToArray(exampleObject);
+console.log("Masalan:", result);
+
+// // O-TASK:
+// // Shunday function yozing, u har xil valuelardan iborat array qabul qilsin va array ichidagi sonlar yigindisini hisoblab chiqqan javobni qaytarsin.
+// // MASALAN: calculateSumOfNumbers([10, "10", {son: 10}, true, 35]) return 45
+
+// function calculateSumOfNumbers(arr: any[]): number {
+//   let sum = 0;
+
+//   for (const item of arr) {
+//     if (typeof item === "number") {
+//       sum += item;
+//     }
+//   }
+
+//   return sum;
+// }
+
+// const result = calculateSumOfNumbers([10, "10", { number: 10 }, true, 35]);
+// console.log(result);
 
 // // 2024-06-27
 // // MIT 14
