@@ -32,6 +32,11 @@ $(function () {
       });
       console.log(response);
       const result = response.data;
+
+
+
+
+      
       if (result.data) {
         $(".new-product-status").blur();
       } else alert("Product updated failed");

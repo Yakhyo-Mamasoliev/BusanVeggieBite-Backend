@@ -1,14 +1,29 @@
-// Q-TASK:
+// R-TASK:
 
-// Shunday function yozing, u 2 ta parametrgga ega bolib birinchisi object, ikkinchisi string. Agar string parametr objectni propertysi bolsa true bolmasa false qaytarsin.
-// MASALAN: hasProperty({name: "BMW", model: "M3"}, "model") return true; hasProperty({name: "BMW", model: "M3"}, "year") return false
+// Shunday function yozing, u string parametrga ega bolsin. String "1+2" holatda pass qilinganda string ichidagi sonlar yigindisini number holatda qaytarsin.
+// MASALAN: calculate("1+3") return 4;
 
-function hasProperty(obj: Record<string, any>, property: string): boolean {
-  return obj.hasOwnProperty(property);
+function calculate(expression: string): number {
+  const parts = expression.split("+");
+
+  const num1 = parseFloat(parts[0]);
+  const num2 = parseFloat(parts[1]);
+  return num1 + num2;
 }
 
-console.log(hasProperty({ name: "BMW", model: "M3" }, "model")); // true
-console.log(hasProperty({ name: "BMW", model: "M3" }, "year")); // false
+console.log(calculate("1+3"));
+
+// // Q-TASK:
+
+// // Shunday function yozing, u 2 ta parametrgga ega bolib birinchisi object, ikkinchisi string. Agar string parametr objectni propertysi bolsa true bolmasa false qaytarsin.
+// // MASALAN: hasProperty({name: "BMW", model: "M3"}, "model") return true; hasProperty({name: "BMW", model: "M3"}, "year") return false
+
+// function hasProperty(obj: Record<string, any>, property: string): boolean {
+//   return obj.hasOwnProperty(property);
+// }
+
+// console.log(hasProperty({ name: "BMW", model: "M3" }, "model")); // true
+// console.log(hasProperty({ name: "BMW", model: "M3" }, "year")); // false
 
 // // P-TASK:
 
