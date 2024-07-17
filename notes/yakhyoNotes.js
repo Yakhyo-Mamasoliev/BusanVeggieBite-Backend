@@ -236,3 +236,23 @@ LESSON 55 Develop Products Frontend Page
 
 
 */
+
+// nested rooting - creating roots inside roots
+
+// Lesson 66- ordersPage
+// -Material UIning Tap Panel Component
+// -Publishing ordersPage screen components and sectional components.
+
+// Accordion (mui)
+// The Accordion component lets users show and hide sections of related content on a page.
+
+// Lesson 66- ordersPage
+// member - signup, login process and Token Authentication
+
+// SSR: The server generates and sends a ready HTML file to the users.
+// SPA: The server sends minimal HTML and JavaScript files. The React (or other frameworks) in the browser fetches data (usually in JSON format) from APIs and dynamically generates the HTML.
+
+// Authentication Process
+// 1. Sessions(using Cookies)
+// 2. Tokens (using Cookies)
+// 3. Tokens (using Headers)
