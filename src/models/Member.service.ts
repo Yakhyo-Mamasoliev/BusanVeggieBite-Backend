@@ -38,9 +38,9 @@ class MemberService {
       .findOne(
         {
           memberNick: input.memberNick,
-          memberStatus: { $ne: MemberStatus.DELETE },
+          memberStatus: { $ne: MemberStatus.DELETE }, //ne not equal
         },
-        { memberNick: 1, memberPassword: 1, memberStatus: 1 }
+        { _id: 1, memberNick: 1, memberPassword: 1, memberStatus: 1 } // 1 true
       )
       .exec();
     if (!member) throw new Errors(HttpCode.NOT_FOUND, Message.NO_MEMBER_NICK);
@@ -56,7 +56,7 @@ class MemberService {
       throw new Errors(HttpCode.UNAUTHORIZED, Message.WRONG_PASSWORD);
     }
 
-    return await this.memberModel.findById(member._id).exec();
+    return await this.memberModel.findById(member._id).lean().exec();
   }
 
   /* SSR Login */

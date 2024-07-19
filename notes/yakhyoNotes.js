@@ -256,3 +256,5 @@ LESSON 55 Develop Products Frontend Page
 // 1. Sessions(using Cookies)
 // 2. Tokens (using Cookies)
 // 3. Tokens (using Headers)
+
+// Cookie parser => Used to save tokens in cookies so they can persist in the browser after user login, allowing the token to travel with the browser for subsequent requests. It acts as middleware.
