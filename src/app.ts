@@ -1,3 +1,4 @@
+//** EXPRESS FILE */
 import express from "express"; // Import the Express framework
 import path from "path"; // Import the path module for handling file paths
 import router from "./router"; // Import the main application router
@@ -5,7 +6,6 @@ import routerAdmin from "./router-admin"; // Import the admin-specific router
 import morgan from "morgan";
 import cookieParser from "cookie-parser";
 import { MORGAN_FORMAT } from "./libs/config";
-
 import session from "express-session";
 import ConnectMongoDB from "connect-mongodb-session";
 import { T } from "./libs/types/common";
@@ -17,15 +17,14 @@ const store = new MongoDBStore({
 });
 
 const app = express(); // Create an instance of an Express application
-
 app.use(express.static(path.join(__dirname, "public")));
-
+app.use("/uploads", express.static("./uploads"));
 app.use(express.urlencoded({ extended: true }));
-
 app.use(express.json());
 app.use(cookieParser());
 app.use(morgan(MORGAN_FORMAT));
 
+//** 2-Sessions */
 app.use(
   session({
     secret: String(process.env.SESSION_SECRET),
