@@ -9,7 +9,7 @@ import {
   ProductUpdateInput,
 } from "../libs/types/product";
 import ProductModel from "../schema/Product.model";
-import productController from "../controllers/product.controller";
+import { ObjectId } from "mongoose";
 
 class ProductService {
   private readonly productModel;
@@ -25,16 +25,17 @@ class ProductService {
     if (inquiry.productCollection)
       match.productCollection = inquiry.productCollection;
     if (inquiry.search) {
-      match.productName = { $regex: new RegExp(inquiry.search, "i") };
+      match.productName = { $regex: new RegExp(inquiry.search, "i") }; // i is a flag
     }
 
     const sort: T =
       inquiry.order === "productPrice"
-        ? { [inquiry.order]: 1 }
-        : { [inquiry.order]: -1 };
+        ? { [inquiry.order]: 1 } // product prize from lowest to highest
+        : { [inquiry.order]: -1 }; // others eg:"new"(createdAt) => from newest to older.
 
     const result = await this.productModel
       .aggregate([
+        //one argument type:Array
         { $match: match },
         { $sort: sort },
         { $skip: (inquiry.page * 1 - 1) * inquiry.limit }, // page: skip 0 document => always gives us a page (including 3 docs see next line) // if page is 2 then it skips 1, 2, 3 docs. shows 4, 5, 6
@@ -42,6 +43,25 @@ class ProductService {
       ])
       .exec();
     if (!result) throw new Errors(HttpCode.NOT_FOUND, Message.NO_DATA_FOUND);
+
+    return result;
+  }
+
+  public async getProduct(
+    memberId: ObjectId /*parameter*/ | null,
+    id: string
+  ): Promise<Product> {
+    const productId = shapeIntoMongooseObjectId(id);
+
+    let result = await this.productModel
+      .findOne({
+        _id: productId,
+        productStatus: ProductStatus.PROCESS,
+      })
+      .exec();
+    if (!result) throw new Errors(HttpCode.NOT_FOUND, Message.NO_DATA_FOUND);
+
+    // TODO: If authenticated users => first => view log creation
 
     return result;
   }

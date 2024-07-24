@@ -273,3 +273,6 @@ LESSON 55 Develop Products Frontend Page
 
 // GET only has Headers (sending data to backend through url in postman)
 // POST has header and body
+
+// verifyAuth = always ask req, no next step
+// retrieveAuth = no need to be logged user, if it is a logged user then makes req=user, also  otherwise also shows next step
