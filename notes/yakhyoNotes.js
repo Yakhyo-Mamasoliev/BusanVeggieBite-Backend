@@ -258,3 +258,18 @@ LESSON 55 Develop Products Frontend Page
 // 3. Tokens (using Headers)
 
 // Cookie parser => Used to save tokens in cookies so they can persist in the browser after user login, allowing the token to travel with the browser for subsequent requests. It acts as middleware.
+
+// Aggregation - pipelines for database to perform queries. 
+
+// Query
+    // const  query = req.query;
+    // console.log("query", query);
+    // postman. localhost:3003/product/all?name=david&age=28
+    
+// Param
+    // postman. localhost:3003/product/all/david
+    // router.ts "/product/all/:id"
+
+
+// GET only has Headers (sending data to backend through url in postman)
+// POST has header and body

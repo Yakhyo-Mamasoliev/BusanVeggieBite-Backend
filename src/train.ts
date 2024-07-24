@@ -1,50 +1,76 @@
-// TASK X
+// TASK Y
 
-// Shunday function yozing, uni object va string parametrlari bo'lsin.
-// Bu function, birinchi object parametri tarkibida, kalit sifatida ikkinchi string parametri
-// necha marotaba takrorlanganlini sanab qaytarsin.
+// Shunday function yozing, uni 2'ta array parametri bo'lsin.
+// Bu function ikkala arrayda ham ishtirok etgan bir xil
+// qiymatlarni yagona arrayga joylab qaytarsin.
 
-// Eslatma => Nested object'lar ham sanalsin
+//  MASALAN: findIntersection([1,2,3], [3,2,0]) return [2,3]
 
-// MASALAN: countOccurrences({model: 'Bugatti', steer: {model: 'HANKOOK', size: 30}}, 'model') return 2
+// Yuqoridagi misolda, argument sifatida berilayotgan array'larda
+// o'xshash sonlar mavjud. Function'ning vazifasi esa ana shu
+// ikkala array'da ishtirok etgan o'xshash sonlarni yagona arrayga
+// joylab return qilmoqda.
 
-// Yuqoridagi misolda, birinchi argument object, ikkinchi argument 'model'.
-// Funktsiya, shu ikkinchi argument 'model', birinchi argument object
-// tarkibida kalit sifatida 2 marotaba takrorlanganligi uchun 2 soni return qilmoqda
+function findIntersection(array1: number[], array2: number[]): number[] {
+  const set = new Set(array1);
+  const intersection = array2.filter(element => set.has(element));
 
-type AnyObject = {
-  [key: string]: any;
-};
-
-function countOccurrences(obj: AnyObject, key: string): number {
-  let count = 0;
-
-  function traverse(obj: AnyObject) {
-    for (const prop in obj) {
-      if (Object.prototype.hasOwnProperty.call(obj, prop)) {
-        if (prop === key) {
-          count++;
-        }
-        if (typeof obj[prop] === "object") {
-          traverse(obj[prop]);
-        }
-      }
-    }
-  }
-
-  traverse(obj);
-  return count;
+  return intersection;
 }
 
-const exampleObj: AnyObject = {
-  model: "Bugatti",
-  steer: {
-    model: "HANKOOK",
-    size: 30,
-  },
-};
+const result = findIntersection([1, 2, 3], [3, 2, 0]);
+console.log(result); 
 
-console.log(countOccurrences(exampleObj, "model"));
+
+
+
+// // TASK X
+
+// // Shunday function yozing, uni object va string parametrlari bo'lsin.
+// // Bu function, birinchi object parametri tarkibida, kalit sifatida ikkinchi string parametri
+// // necha marotaba takrorlanganlini sanab qaytarsin.
+
+// // Eslatma => Nested object'lar ham sanalsin
+
+// // MASALAN: countOccurrences({model: 'Bugatti', steer: {model: 'HANKOOK', size: 30}}, 'model') return 2
+
+// // Yuqoridagi misolda, birinchi argument object, ikkinchi argument 'model'.
+// // Funktsiya, shu ikkinchi argument 'model', birinchi argument object
+// // tarkibida kalit sifatida 2 marotaba takrorlanganligi uchun 2 soni return qilmoqda
+
+// type AnyObject = {
+//   [key: string]: any;
+// };
+
+// function countOccurrences(obj: AnyObject, key: string): number {
+//   let count = 0;
+
+//   function traverse(obj: AnyObject) {
+//     for (const prop in obj) {
+//       if (Object.prototype.hasOwnProperty.call(obj, prop)) {
+//         if (prop === key) {
+//           count++;
+//         }
+//         if (typeof obj[prop] === "object") {
+//           traverse(obj[prop]);
+//         }
+//       }
+//     }
+//   }
+
+//   traverse(obj);
+//   return count;
+// }
+
+// const exampleObj: AnyObject = {
+//   model: "Bugatti",
+//   steer: {
+//     model: "HANKOOK",
+//     size: 30,
+//   },
+// };
+
+// console.log(countOccurrences(exampleObj, "model"));
 
 // TASK W
 

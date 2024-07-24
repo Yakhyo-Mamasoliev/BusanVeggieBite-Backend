@@ -1,11 +1,15 @@
 import { shapeIntoMongooseObjectId } from "../libs/config";
+import { ProductStatus } from "../libs/enums/product.enum";
 import Errors, { HttpCode, Message } from "../libs/Errors";
+import { T } from "../libs/types/common";
 import {
   Product,
   ProductInput,
+  ProductInquiry,
   ProductUpdateInput,
 } from "../libs/types/product";
 import ProductModel from "../schema/Product.model";
+import productController from "../controllers/product.controller";
 
 class ProductService {
   private readonly productModel;
@@ -15,6 +19,32 @@ class ProductService {
   }
 
   /** SPA */
+
+  public async getProducts(inquiry: ProductInquiry): Promise<Product[]> {
+    const match: T = { productStatus: ProductStatus.PROCESS };
+    if (inquiry.productCollection)
+      match.productCollection = inquiry.productCollection;
+    if (inquiry.search) {
+      match.productName = { $regex: new RegExp(inquiry.search, "i") };
+    }
+
+    const sort: T =
+      inquiry.order === "productPrice"
+        ? { [inquiry.order]: 1 }
+        : { [inquiry.order]: -1 };
+
+    const result = await this.productModel
+      .aggregate([
+        { $match: match },
+        { $sort: sort },
+        { $skip: (inquiry.page * 1 - 1) * inquiry.limit }, // page: skip 0 document => always gives us a page (including 3 docs see next line) // if page is 2 then it skips 1, 2, 3 docs. shows 4, 5, 6
+        { $limit: inquiry.limit * 1 }, //  limit: give first 3 docs
+      ])
+      .exec();
+    if (!result) throw new Errors(HttpCode.NOT_FOUND, Message.NO_DATA_FOUND);
+
+    return result;
+  }
 
   /* SSR Login */
 
@@ -40,7 +70,7 @@ class ProductService {
   ): Promise<Product> {
     id = shapeIntoMongooseObjectId(id); // string => ObjectId
     const result = await this.productModel
-      .findByIdAndUpdate({ _id: id }, input, { new: true })
+      .findOneAndUpdate({ _id: id }, input, { new: true })
       .exec();
     if (!result) throw new Errors(HttpCode.NOT_MODIFIED, Message.UPDATE_FAILED);
 
