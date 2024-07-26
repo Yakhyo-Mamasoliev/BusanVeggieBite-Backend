@@ -261,6 +261,7 @@ LESSON 55 Develop Products Frontend Page
 
 // Aggregation - pipelines for database to perform queries. 
 
+
 // Query
     // const  query = req.query;
     // console.log("query", query);

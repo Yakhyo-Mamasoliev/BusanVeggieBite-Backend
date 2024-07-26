@@ -90,11 +90,13 @@ class MemberService {
     return result;
   }
 
+
+  // MemberSchema model find static method: type is query. 
   public async getTopUsers(): Promise<Member[]> {
     const result = await this.memberModel
       .find({
         memberStatus: MemberStatus.ACTIVE,
-        memberPoints: { $gte: 1 },
+        memberPoints: { $gte: 1 }, //gte=| > 1
       })
       .sort({ memberPoints: -1 })
       .limit(4)
