@@ -90,8 +90,7 @@ class MemberService {
     return result;
   }
 
-
-  // MemberSchema model find static method: type is query. 
+  // MemberSchema model find static method: type is query.
   public async getTopUsers(): Promise<Member[]> {
     const result = await this.memberModel
       .find({
@@ -105,6 +104,21 @@ class MemberService {
     return result;
   }
 
+  public async addUserPoint(member: Member, point: number): Promise<Member> {
+    const memberId = shapeIntoMongooseObjectId(member._id);
+
+    return await this.memberModel
+      .findOneAndUpdate(
+        {
+          _id: memberId,
+          memberType: MemberType.USER,
+          memberStatus: MemberStatus.ACTIVE,
+        },
+        { $inc: { memberPoints: point } },
+        { new: true }
+      )
+      .exec();
+  }
   /* SSR Login */
 
   public async processSignup(input: MemberInput): Promise<Member> {
