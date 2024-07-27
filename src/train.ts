@@ -1,4 +1,20 @@
-// TASK Z
+// ZA-TASK:
+
+// Shunday function yozing, u array ichidagi objectlarni “age” qiymati boyicha sortlab bersin.
+// MASALAN: sortByAge([{age:23}, {age:21}, {age:13}]) return [{age:13}, {age:21}, {age:23}]
+
+type Person = { age: number };
+
+function sortByAge(arr: Person[]): Person[] {
+  return arr.sort((a, b) => a.age - b.age);
+}
+
+const people = [{ age: 23 }, { age: 21 }, { age: 13 }];
+const sortedPeople = sortByAge(people);
+
+console.log(sortedPeople);
+
+// // TASK Z
 
 // Shunday function yozing. Bu function sonlardan iborat array
 // qabul qilsin. Function'ning vazifasi array tarkibidagi juft
@@ -12,17 +28,17 @@
 // berilayotgan array tarkibidagi sonlar ichidan faqatgina juft bo'lgan
 // sonlarni topib, ularni hisoblab yig'indisini qaytarmoqda.
 
-function sumEvens(numbers: number[]): number {
-  let sum = 0;
-  for (let i = 0; i < numbers.length; i++) {
-    if (numbers[i] % 2 === 0) {
-      sum += numbers[i];
-    }
-  }
-  return sum;
-}
+// function sumEvens(numbers: number[]): number {
+//   let sum = 0;
+//   for (let i = 0; i < numbers.length; i++) {
+//     if (numbers[i] % 2 === 0) {
+//       sum += numbers[i];
+//     }
+//   }
+//   return sum;
+// }
 
-console.log(sumEvens([1, 2, 3, 2]));
+// console.log(sumEvens([1, 2, 3, 2]));
 
 // TASK Y
 

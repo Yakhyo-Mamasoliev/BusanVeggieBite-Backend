@@ -277,3 +277,6 @@ LESSON 55 Develop Products Frontend Page
 
 // verifyAuth = always ask req, no next step
 // retrieveAuth = no need to be logged user, if it is a logged user then makes req=user, also  otherwise also shows next step
+
+// Hooks - useState and useEffect React Hooks
+// React Functional components - any function used in react, for components we use function not class in react
