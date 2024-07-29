@@ -259,24 +259,50 @@ LESSON 55 Develop Products Frontend Page
 
 // Cookie parser => Used to save tokens in cookies so they can persist in the browser after user login, allowing the token to travel with the browser for subsequent requests. It acts as middleware.
 
-// Aggregation - pipelines for database to perform queries. 
+// Aggregation - pipelines for database to perform queries.
+// - it has 1 array arg. cos it executes its so called 'methods' consequently and in the end it deals with db once
+// order of execution is so important
 
-
+// TODO:  Param-Query types,  how to call
 // Query
-    // const  query = req.query;
-    // console.log("query", query);
-    // postman. localhost:3003/product/all?name=david&age=28
-    
+// const  query = req.query;
+// console.log("query", query);
+// postman. localhost:3003/product/all?name=david&age=28
+
 // Param
-    // postman. localhost:3003/product/all/david
-    // router.ts "/product/all/:id"
-
-
+// postman. localhost:3003/product/all/david
+// router.ts "/product/all/:id"
 // GET only has Headers (sending data to backend through url in postman)
-// POST has header and body
 
+// 75 getProducts
+// Promise<Product[]> "async => Promise, product of array => Product[]
+
+// 76-77 develop getMyOrders updateOrder rest API
 // verifyAuth = always ask req, no next step
 // retrieveAuth = no need to be logged user, if it is a logged user then makes req=user, also  otherwise also shows next step
+// Inside an Pending object all execution occurs at the same time.
+// Pending Object it waits till an action completes inside an object
+// Promise.all => We cannot use iterative function(for, for-each) with async conditions\. So we use an Promise.all
+// POST has header and body
+// Aggregation pipeline has only one argument which is a list.
+// Lookup. We used lookup inside aggregation to show ordered items to the user on order-page
+// T-type is any, our choice/ T is used to get Object value of any. T {key: string, value: any}
+// Number (capital letter): to convert eg: page: Number(page)
+// number (lowercase letter): ts related eg: memberPoints: number
 
+// 78-78
 // Hooks - useState and useEffect React Hooks
 // React Functional components - any function used in react, for components we use function not class in react
+//
+//
+
+// TODO: questions
+// What is Destruction
+// Brian => Id, manually, by hand? (db, go db  change _id to anything, does it work).
+//T-type We are using it for getting object type, right?
+// Din => ViewCount
+// productService.ts -- see pagination method again
+//$skip => skip first n items
+// $limit => limit remaining item to n = show n objects only
+// reexplain using chatgpt for aggregation def
+// Last - Aggregation 1 5.20min

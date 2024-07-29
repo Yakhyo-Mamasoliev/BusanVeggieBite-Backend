@@ -119,6 +119,7 @@ class MemberService {
       )
       .exec();
   }
+
   /* SSR Login */
 
   public async processSignup(input: MemberInput): Promise<Member> {
