@@ -293,7 +293,8 @@ LESSON 55 Develop Products Frontend Page
 // 78-78
 // Hooks - useState and useEffect React Hooks
 // React Functional components - any function used in react, for components we use function not class in react
-//
+// //@ts-nocheck => do not check ( at the beginning react file)
+
 //
 
 // TODO: questions
