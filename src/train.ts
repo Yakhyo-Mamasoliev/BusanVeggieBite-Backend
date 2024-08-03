@@ -1,14 +1,42 @@
-// ZC-TASK:
+// TASK ZD
+// Shunday function yozing. Bu function o'ziga, parametr sifatida
+// birinchi oddiy number, keyin yagona array va uchinchi bo'lib oddiy number
+// qabul qilsin. Berilgan birinchi number parametr, arrayning tarkibida indeks bo'yicha hisoblanib,
+// shu aniqlangan indeksni uchinchi number parametr bilan alashtirib, natija sifatida
+// yangilangan arrayni qaytarsin.
 
-// Shunday function yozing, uni number parametri bolsin va function qabul parametrni selsiy miqdori sifatida qabul qilib uni farenhitga ozgartirib bersin
-// MASALAN: celsiusToFahrenheit(0) return 32
+// MASALAN: changeNumberInArray(1, [1,3,7,2], 2) return [1,2,7,2];
 
-function celsiusToFahrenheit(celsius: number): number {
-  return (celsius * 9) / 5 + 32;
+// Yuqoridagi misolda, birinchi raqam bu '1' va arrayning '1'chi indeksi bu 3.
+// Bizning function uchinchi berilgan '2' raqamini shu '3' bilan almashtirib,
+// yangilangan arrayni qaytarmoqda.
+
+function changeNumberInArray(
+  index: number,
+  arr: number[],
+  newNumber: number
+): number[] {
+  let updatedArray = [...arr];
+
+  updatedArray[index] = newNumber;
+
+  return updatedArray;
 }
 
-const fahrenheit = celsiusToFahrenheit(0);
-console.log(fahrenheit);
+const result = changeNumberInArray(1, [1, 3, 7, 2], 2);
+console.log(result);
+
+// // ZC-TASK:
+
+// // Shunday function yozing, uni number parametri bolsin va function qabul parametrni selsiy miqdori sifatida qabul qilib uni farenhitga ozgartirib bersin
+// // MASALAN: celsiusToFahrenheit(0) return 32
+
+// function celsiusToFahrenheit(celsius: number): number {
+//   return (celsius * 9) / 5 + 32;
+// }
+
+// const fahrenheit = celsiusToFahrenheit(0);
+// console.log(fahrenheit);
 
 // ZB-TASK:
 
