@@ -289,21 +289,107 @@ LESSON 55 Develop Products Frontend Page
 // T-type is any, our choice/ T is used to get Object value of any. T {key: string, value: any}
 // Number (capital letter): to convert eg: page: Number(page)
 // number (lowercase letter): ts related eg: memberPoints: number
+/* 78
+Hooks - useState and useEffect React Hooks
+React Functional components - any function used in react, for components we use function not class in react
+Hooks are functions in React that let you use state and other React features in functional components, without needing class components. It allows to catch changes in operations
+to use states we use use-state hook
+to use life cycle methods we use use-effect
+State in React is a built-in object that is used to contain data or information about the component. State can change over time, and when it does, the component re-renders
+Lifecycle Methods in React are special methods that get called at different stages of a component's life, such as when it is created, updated, or removed from the DOM.
+In functional components, these lifecycle methods can be managed using the useEffect hook.
+useEffect hook has 2 arg 1. CallBack function 2. array dependency eg:
 
-// 78-78
-// Hooks - useState and useEffect React Hooks
-// React Functional components - any function used in react, for components we use function not class in react
-// //@ts-nocheck => do not check ( at the beginning react file)
+ useEffect(() => {
+    console.log("ComponentDidMount"); // DATA Fetch
+}, [array]);  //empty array => function only works once. if it has value and when value changes it also changes
 
-//
+ useState
+When you call useState, it returns an array with two elements:
+Current State Value: The current value of the state.
+Setter Function: A function to update the state.
 
-// TODO: questions
-// What is Destruction
-// Brian => Id, manually, by hand? (db, go db  change _id to anything, does it work).
-//T-type We are using it for getting object type, right?
-// Din => ViewCount
-// productService.ts -- see pagination method again
-//$skip => skip first n items
-// $limit => limit remaining item to n = show n objects only
-// reexplain using chatgpt for aggregation def
-// Last - Aggregation 1 5.20min
+const [value, setValue] = useState<boolean>(true);
+  // useState hook returns 2 values in array 1. value its type is boolean, with initial value true. 2.setValue function to update value 
+  [] are used for array destructuring.
+
+dependency array is an array of values that the effect or memoized value depends on.
+
+//@ts-nocheck => do not check ( at the beginning react file)
+in react classes has use-state but functions do not so we use hooks to use use-state in functions
+React component lifecycle methods:
+1. Mounting (create)
+   - constructor
+   - static getDerivedStateFromProps
+   - render
+ + - componentDidMount
+2. Updating (update)
+   - static getDerivedStateFromProps
+   - shouldComponentUpdate
+   - render
+   - getSnapshotBeforeUpdate
+ + - componentDidUpdate
+3. Unmounting (remove)
+ + - componentWillUnmount
+in short(devex)
+1. Mounting (create) => componentDidMount (when a certain component is mounted, it works)
+2. Updating (update) => componentDidUpdate()
+3. Unmounting (remove) => componentWillUnmount
+eg:
+
+  useEffect(() => {
+    console.log("ComponentDidMount", count); // 1. ComponentDidMount
+    setCount(count + 1);
+    return () => { // 3. ComponentWillUnmount
+      console.log("ComponentWillUnmount");
+    };
+  }, [value]); // => 2. ComponentDidUpdate
+
+Webpage: What you see rendered in your browser, including text, images, and other content.
+DOM: The representation of the webpage's structure that your browser creates from the HTML document. It includes elements, attributes, and text as nodes in a tree structure.
+*/
+
+/*  79 Redux
+Plans:
+- Review run of project
+- Learn Redux architecture of our project
+- Pros of Redux Toolkit
+
+Review run of project
+  - run (yarn run build) to compile our project
+  - but, in the end of ts changes to js
+  - if we type 'yarn run dev' it builds 'build' folder
+        - build folder transfers all files in the development process of the project in ts or any to a js file to run them in production
+  - yarn global add serve
+  - serve -s build
+  - yarn global add serve- 
+       - Local:   http://localhost:3000 
+       - Network:  http://192.168.1.234:3000 
+
+Learn Redux architecture of our project
+  - library but most famous when its is used with react 
+  - Redux is based on Flux architecture
+  1. Vie/UI
+  2. Action = Action Creator + Action Type 
+  3. Reducer
+  4. Store
+
+  Additional Concept
+    1. dispatch(so called 'slice') => Sends actions to the store to update the state.
+      Action => Reducer 
+    2. subscribe(so called 'selector') => Listens for state changes in the store. 
+      Reducer => Store => View/UI
+
+  - Follows the unidirectional data flow => one orderly direction
+  - MVC we can use it for both front and backend, but no store
+  - Redux, mostly or only used for frontend with react and other libraries. It has one store(storage)
+  - MVC. Controllers handle entire logic
+  - Redux. Reducer handle entire logic Action => Reducer => Store => View/UI
+  - Debugging is the process of finding and fixing errors or bugs in the source code of any software.
+    easier in Redux than MVC
+  - Storage is open to all components
+
+Pros of Redux Toolkit
+  - Redux Toolkit makes it easier to write good Redux applications and speeds up development,
+
+37mins  */
