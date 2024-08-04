@@ -1,3 +1,4 @@
+import cors from "cors";
 //** EXPRESS FILE */
 import express from "express"; // Import the Express framework
 import path from "path"; // Import the path module for handling file paths
@@ -21,6 +22,12 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use("/uploads", express.static("./uploads"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(
+  cors({
+    credentials: true,
+    origin: true,
+  })
+);
 app.use(cookieParser());
 app.use(morgan(MORGAN_FORMAT));
 
