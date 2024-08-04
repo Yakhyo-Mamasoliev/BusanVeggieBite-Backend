@@ -1,3 +1,29 @@
+
+// Shunday function yozing, uniygona string parametri mavjud bo'lsin.
+// Bu function string tarkibidagi takrorlangan xarflarni olib tashlab qolgan
+// qiymatni qaytarsin.
+// MASALAN: removeDuplicate('stringg') return 'string'
+// Yuqoridagi misolda, 'stringg' so'zi tarkibida 'g' harfi takrorlanmoqda
+// funktsiyamiz shu bittadan ortiq takrorlangan harfni olib natijani
+// qaytarmoqda.
+
+function removeDuplicate(str: string): string {
+  const seen = new Set<string>();
+  const result: string[] = [];
+
+  for (const char of str) {
+    if (!seen.has(char)) {
+      seen.add(char);
+      result.push(char);
+    }
+  }
+
+  return result.join("");
+}
+
+const result = removeDuplicate("carr");
+console.log(result);
+
 // TASK ZD
 // Shunday function yozing. Bu function o'ziga, parametr sifatida
 // birinchi oddiy number, keyin yagona array va uchinchi bo'lib oddiy number
@@ -11,20 +37,20 @@
 // Bizning function uchinchi berilgan '2' raqamini shu '3' bilan almashtirib,
 // yangilangan arrayni qaytarmoqda.
 
-function changeNumberInArray(
-  index: number,
-  arr: number[],
-  newNumber: number
-): number[] {
-  let updatedArray = [...arr];
+// function changeNumberInArray(
+//   index: number,
+//   arr: number[],
+//   newNumber: number
+// ): number[] {
+//   let updatedArray = [...arr];
 
-  updatedArray[index] = newNumber;
+//   updatedArray[index] = newNumber;
 
-  return updatedArray;
-}
+//   return updatedArray;
+// }
 
-const result = changeNumberInArray(1, [1, 3, 7, 2], 2);
-console.log(result);
+// const result = changeNumberInArray(1, [1, 3, 7, 2], 2);
+// console.log(result);
 
 // // ZC-TASK:
 
