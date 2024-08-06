@@ -35,8 +35,8 @@ class ProductService {
 
     const sort: T =
       inquiry.order === "productPrice"
-        ? { [inquiry.order]: 1 } // product prize from lowest to highest
-        : { [inquiry.order]: -1 }; // others eg:"new"(createdAt) => from newest to older.
+        ? { [inquiry.order]: 1 } 
+        : { [inquiry.order]: -1 };
 
     const result = await this.productModel
       .aggregate([
