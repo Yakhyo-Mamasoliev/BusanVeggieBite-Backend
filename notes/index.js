@@ -6,7 +6,7 @@ const person = {
   country: "English",
   //using method
   greet() {
-    console.log("Whassup: This is method: ");
+    console.log("This is method: ");
   },
   introduce() {
     console.log(`I am ${this.name} and my age is ${this.age} years old`);

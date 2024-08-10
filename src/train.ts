@@ -1,14 +1,35 @@
-// ZG-TASK:
+// ZH-TASK:
 
-// Shunday function yozing, u berilgan string parametrni snake casega otkazib qaytarsin.
-// MASALAN: capitalizeWords('name should be a string') return 'name_should_be_a_string'
+// Shunday function yozing, u berilgan array parametrni ichidagi eng katta raqamgacha tushib qolgan raqamlarni bir arrayda qaytarsin.
+// MASALAN: findDisappearedNumbers([1, 3, 4, 7]) return [2, 5, 6]
 
-function toSnakeCase(sentence: string): string {
-  return sentence.toLowerCase().split(" ").join("_");
+function findDisappearedNumbers(arr: number[]) {
+  const minNum = Math.min(...arr);
+  const maxNum = Math.max(...arr);
+  let missingNumbers = [];
+
+  for (let i = minNum + 1; i < maxNum; i++) {
+    if (!arr.includes(i)) {
+      missingNumbers.push(i);
+    }
+  }
+
+  return missingNumbers;
 }
 
-const result = toSnakeCase("name should be a string");
-console.log(result);
+console.log(findDisappearedNumbers([1, 3, 4, 7]));
+
+// // ZG-TASK:
+
+// // Shunday function yozing, u berilgan string parametrni snake casega otkazib qaytarsin.
+// // MASALAN: capitalizeWords('name should be a string') return 'name_should_be_a_string'
+
+// function toSnakeCase(sentence: string): string {
+//   return sentence.toLowerCase().split(" ").join("_");
+// }
+
+// const result = toSnakeCase("name should be a string");
+// console.log(result);
 
 // ZF-TASK:
 
