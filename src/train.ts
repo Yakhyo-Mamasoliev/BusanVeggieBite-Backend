@@ -4,20 +4,33 @@
 // MASALAN: findDisappearedNumbers([1, 3, 4, 7]) return [2, 5, 6]
 
 function findDisappearedNumbers(arr: number[]) {
-  const minNum = Math.min(...arr);
   const maxNum = Math.max(...arr);
-  let missingNumbers = [];
-
-  for (let i = minNum + 1; i < maxNum; i++) {
-    if (!arr.includes(i)) {
-      missingNumbers.push(i);
-    }
-  }
-
-  return missingNumbers;
+  const fullRange = Array.from({ length: maxNum }, (_, i) => i + 1);
+  return fullRange.filter((num) => !arr.includes(num));
 }
 
 console.log(findDisappearedNumbers([1, 3, 4, 7]));
+
+// // ZH-TASK:
+
+// // Shunday function yozing, u berilgan array parametrni ichidagi eng katta raqamgacha tushib qolgan raqamlarni bir arrayda qaytarsin.
+// // MASALAN: findDisappearedNumbers([1, 3, 4, 7]) return [2, 5, 6]
+
+// function findDisappearedNumbers(arr: number[]) {
+//   const minNum = Math.min(...arr);
+//   const maxNum = Math.max(...arr);
+//   let missingNumbers = [];
+
+//   for (let i = minNum + 1; i < maxNum; i++) {
+//     if (!arr.includes(i)) {
+//       missingNumbers.push(i);
+//     }
+//   }
+
+//   return missingNumbers;
+// }
+
+// console.log(findDisappearedNumbers([1, 3, 4, 7]));
 
 // // ZG-TASK:
 
