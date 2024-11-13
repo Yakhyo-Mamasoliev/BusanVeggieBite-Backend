@@ -1,45 +1,127 @@
 <%- include('includes/header') %>
 
 <link rel="stylesheet" type="text/css" href="/css/login.css" />
+<!-- Add Font Awesome for icons -->
+<link
+	rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+/>
 
-<body>
-  <form class="login-container" action="/admin/login" METHOD="POST">
-    <div class="login-frame">
-      <div class="login-top">
-        <span>Enter</span>
-        <div>Go back <a href="/admin" style="color: #6440fb">Home</a></div>
-        <p>
-          Not registered yet?
-          <a href="/admin/signup" style="color: #6440fb">Signup</a>
-        </p>
-      </div>
-      <div class="login-input-frame">
-        <div class="login-input-container">
-          <label>Restaurant *</label>
-          <input
-            type="text"
-            name="memberNick"
-            class="member-nick"
-            placeholder="Username"
-            value=""
-            required
-          />
-        </div>
-        <div class="login-input-container">
-          <label>Password *</label>
-          <input
-            type="password"
-            name="memberPassword"
-            class="member-password"
-            placeholder="Password"
-            value=""
-            required
-          />
-        </div>
-      </div>
-      <button class="login-btn btn" name="login" type="submit">Login</button>
-    </div>
-  </form>
-</body>
+<main class="login-container">
+	<form class="login-frame" action="/admin/login" method="POST" novalidate>
+		<div class="login-top">
+			<span>Welcome Back</span>
+			<p>Please enter your credentials to continue</p>
+		</div>
+
+		<!-- Show any flash messages or errors -->
+		<% if (typeof messages !== 'undefined' && messages.error) { %>
+		<div class="alert alert-error" role="alert"><%= messages.error %></div>
+		<% } %>
+
+		<div class="login-input-frame">
+			<div class="login-input-container">
+				<label for="memberNick">Restaurant Name</label>
+				<div class="input-wrapper">
+					<i class="fas fa-store input-icon"></i>
+					<input
+						type="text"
+						id="memberNick"
+						name="memberNick"
+						class="member-nick"
+						placeholder="Enter your restaurant name"
+						required
+						autocomplete="username"
+						value="<%= locals.oldInput ? locals.oldInput.memberNick : '' %>"
+					/>
+				</div>
+			</div>
+
+			<div class="login-input-container">
+				<label for="memberPassword">Password</label>
+				<div class="input-wrapper">
+					<i class="fas fa-lock input-icon"></i>
+					<input
+						type="password"
+						id="memberPassword"
+						name="memberPassword"
+						class="member-password"
+						placeholder="Enter your password"
+						required
+						autocomplete="current-password"
+					/>
+					<button
+						type="button"
+						class="password-toggle"
+						aria-label="Toggle password visibility"
+					>
+						<i class="fas fa-eye"></i>
+					</button>
+				</div>
+			</div>
+
+			<div class="login-options">
+				<div class="remember-me">
+					<input type="checkbox" id="remember" name="remember" />
+					<label for="remember">Remember me</label>
+				</div>
+				<a href="/admin/forgot-password" class="forgot-password"
+					>Forgot Password?</a
+				>
+			</div>
+		</div>
+
+		<button class="login-btn" name="login" type="submit">
+			<span>Login</span>
+			<i class="fas fa-arrow-right"></i>
+		</button>
+
+		<div class="login-footer">
+			<p>Don't have an account? <a href="/admin/signup">Sign up</a></p>
+			<a href="/admin" class="back-home">
+				<i class="fas fa-home"></i>
+				Back to Home
+			</a>
+		</div>
+	</form>
+</main>
+
+<!-- Add this before closing body -->
+<script>
+	document.addEventListener("DOMContentLoaded", function () {
+		// Password visibility toggle
+		const togglePassword = document.querySelector(".password-toggle");
+		const passwordInput = document.querySelector(".member-password");
+
+		togglePassword?.addEventListener("click", function () {
+			const type =
+				passwordInput.getAttribute("type") === "password" ? "text" : "password";
+			passwordInput.setAttribute("type", type);
+			this.querySelector("i").classList.toggle("fa-eye");
+			this.querySelector("i").classList.toggle("fa-eye-slash");
+		});
+
+		// Form validation
+		const form = document.querySelector("form");
+		form?.addEventListener("submit", function (e) {
+			const inputs = form.querySelectorAll("input[required]");
+			let isValid = true;
+
+			inputs.forEach((input) => {
+				if (!input.value.trim()) {
+					isValid = false;
+					input.classList.add("error");
+				} else {
+					input.classList.remove("error");
+				}
+			});
+
+			if (!isValid) {
+				e.preventDefault();
+				// Optional: Show error message
+			}
+		});
+	});
+</script>
 
 <%- include('includes/footer') %>

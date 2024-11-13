@@ -1,67 +1,199 @@
-.home-container {
-  position: relative;
-  width: auto;
-  height: auto;
-  min-height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background: linear-gradient(-45deg, #110303f0, #dd6d04, #011c1afc, #7a6868);
+/* Modern CSS Reset */
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
 }
 
+/* Custom Properties for Theme Colors */
+:root {
+	--primary-color: #2a2a2a;
+	--accent-color: #64ffda;
+	--text-primary: #ffffff;
+	--text-secondary: #b3b3b3;
+	--bg-primary: #121212;
+	--bg-secondary: #1e1e1e;
+	--transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Base Styles */
+body {
+	font-family: "Inter", "SF Pro Display", -apple-system, BlinkMacSystemFont,
+		sans-serif;
+	background-color: var(--bg-primary);
+	color: var(--text-primary);
+	line-height: 1.6;
+	overflow-x: hidden;
+}
+
+/* Container Styles */
+.home-container {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	background: linear-gradient(
+		to bottom,
+		rgba(18, 18, 18, 0.95),
+		rgba(18, 18, 18, 0.98)
+	);
+}
+
+/* Navigation Styles */
+.home-container .navigation-menu {
+	position: fixed;
+	width: 100%;
+	z-index: 1000;
+	padding: 1.5rem;
+	background: rgba(30, 30, 30, 0.95);
+	backdrop-filter: blur(10px);
+	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+	transition: var(--transition-smooth);
+}
+
+.home-container .navigation-menu:hover {
+	background: rgba(30, 30, 30, 0.98);
+}
+
+/* Link Styles */
 .home-container a {
-  text-decoration: none;
-  color: #000000;
+	text-decoration: none;
+	color: var(--text-primary);
+	transition: var(--transition-smooth);
 }
 
 .home-container .nav-item a {
-  color: #e3c08d;
+	position: relative;
+	font-size: 1.5rem;
+	font-weight: 500;
+	padding: 1rem 1rem;
 }
 
-.home-container .nav-item a.disabled {
-  color: #898071;
+.home-container .nav-item a::after {
+	content: "";
+	position: absolute;
+	bottom: -2px;
+	left: 50%;
+	width: 0;
+	height: 2px;
+	background: var(--accent-color);
+	transition: var(--transition-smooth);
+	transform: translateX(-50%);
 }
 
-.home-container .navigation-menu {
-  position: relative;
-  z-index: 10000;
-  color: #efefee;
-  font-size: 40px;
-  font-family: monospace;
+.home-container .nav-item a:hover {
+	color: var(--accent-color);
+	font-weight: 700; /* Make text bolder on hover */
+	text-shadow: 0 0 5px var(--accent-color); /* Add glow effect */
 }
 
-.home-container .animation-frame {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 55px;
+.home-container .nav-item a:hover::after {
+	width: 100%;
 }
 
-.home-container .animation-wrapper {
-  position: relative;
-  width: 775px;
-  height: 775px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+/* Slider Styles - Reverted to Original with Some Enhancements */
+.slider {
+	height: 100vh;
+	width: 100vw;
+	display: flex;
+	overflow: hidden;
+	position: relative;
 }
 
-.home-container .sphere-animation {
-  position: relative;
-  width: 580px;
-  height: 580px;
+.slider .slide {
+	flex: 1;
+	position: relative;
+	z-index: 10;
+	background-size: cover;
+	background-position: center center;
+	opacity: 0.8;
+	transition: flex 0.8s ease, opacity 0.5s ease;
+	cursor: pointer;
 }
 
-.home-container .sphere path {
-  fill: url(#sphereGradient);
-  stroke-width: 1px;
-  stroke: rgba(80, 80, 80, 0.35);
-  backface-visibility: hidden;
+.slider .slide::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: rgba(0, 0, 0, 0.2);
+	opacity: 0;
+	transition: opacity 0.5s ease;
 }
 
-@media (min-width: 500px) {
-  .sphere path {
-    stroke-width: 0.4px;
-  }
+.slider .slide:hover {
+	flex: 1.5;
+	opacity: 1;
+}
+
+.slider .slide:hover::before {
+	opacity: 1;
+}
+
+/* Footer Styles */
+.footer {
+	background-color: var(--bg-secondary);
+	color: var(--text-secondary);
+	padding: 2rem;
+	text-align: center;
+	margin-top: auto;
+	position: relative;
+	z-index: 10;
+}
+
+.footer::before {
+	content: "";
+	position: absolute;
+	top: -2px;
+	left: 0;
+	right: 0;
+	height: 2px;
+	background: linear-gradient(
+		90deg,
+		transparent,
+		var(--accent-color),
+		transparent
+	);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+	.home-container .navigation-menu {
+		padding: 1rem;
+	}
+
+	.home-container .nav-item a {
+		font-size: 1rem;
+		padding: 0.4rem 0.8rem;
+	}
+
+	.slider .slide {
+		opacity: 0.6;
+	}
+
+	.slider .slide:hover {
+		opacity: 1;
+	}
+}
+
+/* Animation Keyframes for Loading States */
+@keyframes shimmer {
+	0% {
+		background-position: -1000px 0;
+	}
+	100% {
+		background-position: 1000px 0;
+	}
+}
+
+.loading {
+	animation: shimmer 2s infinite linear;
+	background: linear-gradient(
+		to right,
+		var(--bg-secondary) 4%,
+		var(--bg-primary) 25%,
+		var(--bg-secondary) 36%
+	);
 }

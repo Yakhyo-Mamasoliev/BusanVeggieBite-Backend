@@ -1,143 +1,240 @@
 .login-container {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-  animation: gradient 15s ease infinite;
-  -webkit-animation: gradient 15s ease infinite;
-  background-size: 200% 200%;
+	min-height: 100vh;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: #f5f5f5;
+	padding: 1rem;
 }
 
+.login-frame {
+	width: 100%;
+	max-width: 400px;
+	background: #ffffff;
+	border-radius: 16px;
+	padding: 2rem;
+	box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+		0 2px 4px -1px rgba(0, 0, 0, 0.06);
+	transition: transform 0.2s ease;
+}
+
+.login-frame:hover {
+	transform: translateY(-2px);
+}
+
+.login-top {
+	text-align: center;
+	margin-bottom: 2rem;
+}
+
+.login-top span {
+	font-family: system-ui, -apple-system, sans-serif;
+	font-size: 1.875rem;
+	font-weight: 700;
+	color: #1a1a1a;
+	letter-spacing: -0.025em;
+}
+
+.login-top p {
+	margin-top: 0.75rem;
+	font-family: system-ui, -apple-system, sans-serif;
+	font-size: 0.975rem;
+	color: #6b7280;
+	line-height: 1.5;
+}
+
+.login-input-container {
+	margin-bottom: 1.5rem;
+}
+
+.login-input-container label {
+	display: block;
+	font-family: system-ui, -apple-system, sans-serif;
+	font-size: 0.875rem;
+	font-weight: 500;
+	color: #374151;
+	margin-bottom: 0.5rem;
+}
+
+.login-input-container input {
+	width: 100%;
+	height: 2.75rem;
+	padding: 0.5rem 0.75rem;
+	background-color: #ffffff;
+	border: 1px solid #d1d5db;
+	border-radius: 8px;
+	font-size: 0.95rem;
+	transition: all 0.2s ease;
+}
+
+.login-input-container input:focus {
+	outline: none;
+	border-color: #2563eb;
+	box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.login-input-container input::placeholder {
+	color: #9ca3af;
+}
+
+.login-btn {
+	width: 100%;
+	padding: 0.75rem 1.5rem;
+	background-color: #2563eb;
+	color: #ffffff;
+	border: none;
+	border-radius: 8px;
+	font-family: system-ui, -apple-system, sans-serif;
+	font-size: 1rem;
+	font-weight: 600;
+	cursor: pointer;
+	transition: all 0.2s ease;
+}
+
+.login-btn:hover {
+	background-color: #1d4ed8;
+}
+
+.login-btn:focus {
+	outline: none;
+	box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.5);
+}
+
+/* For links within the login container */
 .login-container a {
-  text-decoration: none;
-  color: black;
+	color: #2563eb;
+	text-decoration: none;
+	font-weight: 500;
+	transition: color 0.2s ease;
 }
 
-.login-container .login-frame {
-  position: relative;
-  width: 420px;
-  height: auto;
-  display: flex;
-  flex-direction: column;
-  border-radius: 10px;
-  background: #ffffff;
-  padding: 25px;
+.login-container a:hover {
+	color: #1d4ed8;
+	text-decoration: underline;
 }
 
-.login-container .login-frame .login-top {
-  position: relative;
-  width: 100%;
-  height: auto;
-  display: flex;
-  flex-direction: column;
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+	.login-container {
+		background-color: #1a1a1a;
+	}
+
+	.login-frame {
+		background-color: #262626;
+	}
+
+	.login-top span {
+		color: #ffffff;
+	}
+
+	.login-top p {
+		color: #9ca3af;
+	}
+
+	.login-input-container label {
+		color: #e5e7eb;
+	}
+
+	.login-input-container input {
+		background-color: #333333;
+		border-color: #404040;
+		color: #ffffff;
+	}
+
+	.login-input-container input:focus {
+		border-color: #3b82f6;
+	}
 }
 
-.login-container .login-top span {
-  font-family: "Poppins";
-  font-style: normal;
-  font-weight: 700;
-  font-size: 30px;
-  line-height: 34px;
+* Add these to your existing login.css */ .input-wrapper {
+	position: relative;
+	display: flex;
+	align-items: center;
 }
 
-.login-container .login-top p {
-  margin-top: 15px;
-  font-family: "Poppins";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 15px;
-  line-height: 26px;
+.input-icon {
+	position: absolute;
+	left: 12px;
+	color: #6b7280;
 }
 
-.login-container .login-top div {
-  font-family: "Poppins";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 15px;
-  line-height: 26px;
+.password-toggle {
+	position: absolute;
+	right: 12px;
+	background: none;
+	border: none;
+	color: #6b7280;
+	cursor: pointer;
+	padding: 0;
+	display: flex;
+	align-items: center;
 }
 
-.login-container .login-frame .login-input-frame {
-  position: relative;
-  width: 100%;
-  height: auto;
-  display: flex;
-  flex-direction: column;
+.login-input-container input {
+	padding-left: 2.5rem;
 }
 
-.login-container .login-input-container {
-  position: relative;
-  margin-top: 15px;
-  width: 100%;
-  height: auto;
-  display: flex;
-  flex-direction: column;
+.login-input-container input[type="password"] {
+	padding-right: 2.5rem;
 }
 
-.login-container .login-input-container label {
-  margin-bottom: 0px;
-  font-family: "Poppins";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 18px;
+.login-options {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin: 1rem 0;
 }
 
-.login-container .login-input-container input {
-  position: relative;
-  margin-top: 10px;
-  padding-left: 20px;
-  width: 100%;
-  height: 55px;
-  background: #f6f5f5;
-  border: 1px solid #dddddd;
-  border-radius: 8px;
+.remember-me {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
 }
 
-.login-container .login-frame .login-btn {
-  position: relative;
-  margin-top: 25px;
-  width: 100%;
-  height: 70px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #33a0ff;
-  border-radius: 10px;
-  font-family: "Nunito";
-  font-style: normal;
-  font-weight: 800;
-  font-size: 24px;
-  line-height: 33px;
-  letter-spacing: -0.02em;
-  color: #ffffff;
+.forgot-password {
+	color: #2563eb;
+	font-size: 0.875rem;
 }
 
-/* Background animation */
-@-webkit-keyframes gradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+.login-footer {
+	margin-top: 1.5rem;
+	text-align: center;
 }
 
-@keyframes gradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+.back-home {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5rem;
+	margin-top: 1rem;
+}
+
+.alert {
+	padding: 0.75rem 1rem;
+	border-radius: 0.5rem;
+	margin-bottom: 1rem;
+}
+
+.alert-error {
+	background-color: #fee2e2;
+	color: #991b1b;
+	border: 1px solid #fecaca;
+}
+
+input.error {
+	border-color: #ef4444;
+}
+
+/* Dark mode adjustments */
+@media (prefers-color-scheme: dark) {
+	.alert-error {
+		background-color: #7f1d1d;
+		color: #fecaca;
+		border-color: #991b1b;
+	}
+
+	.input-icon,
+	.password-toggle {
+		color: #9ca3af;
+	}
 }

@@ -1,110 +1,127 @@
+body {
+	margin: 0;
+	font-family: "Arial", sans-serif;
+	background-color: #1c1c2e; /* Dark background for contrast */
+}
+
 .users-container {
-  position: relative;
-  width: auto;
-  height: auto;
-  min-width: 100%;
-  min-height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background: linear-gradient(-45deg, #110303bf, #e37813, #011c1aba, #968383);
+	position: relative;
+	min-width: 100%;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background: linear-gradient(135deg, #3b3b6e, #3c5f9b); /* Blue gradient */
+	padding: 20px;
+	color: #f0e68c; /* Soft gold for text */
 }
 
 .users-container a {
-  text-decoration: none;
-  color: #000000;
+	text-decoration: none;
+	color: #f0e68c; /* Soft gold for links */
+	transition: color 0.3s ease;
+}
+
+.users-container a:hover {
+	color: #ffd700; /* Bright gold on hover */
+	background-color: transparent; /* Ensure background color does not change */
 }
 
 .users-container .nav-item a {
-  color: #e3c08d;
+	color: #f0e68c; /* Consistent soft gold for navigation */
+}
+
+.users-container .nav-item a:hover {
+	color: #ffd700; /* Bright gold on hover for navigation items */
+	background-color: transparent; /* Ensure background color does not change */
 }
 
 .users-container .nav-item a.disabled {
-  color: #898071;
+	color: #c0c0c0; /* Muted gray for disabled links */
 }
 
 .users-container .navigation-menu {
-  position: absolute;
-  z-index: 10000;
-  top: 1%;
-  color: #efefee;
-  font-size: 40px;
-  font-family: monospace;
+	position: absolute;
+	z-index: 10000;
+	top: 1%;
+	font-size: 24px;
 }
 
 .users-container .users-frame {
-  position: relative;
-  padding-bottom: 80px;
-  width: 100%;
-  height: auto;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+	margin-top: 80px;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 
 .users-container .users-frame .board {
-  position: relative;
-  margin-top: 100px;
-  width: 1320px;
-  height: auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.users-container .board .dishes-table {
-  position: relative;
-  width: 100%;
-  height: auto;
-  margin-top: 30px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.users-container .board .user-table {
-  position: relative;
-  width: 85%;
-  height: auto;
-  margin-top: 30px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+	width: 90%;
+	max-width: 1200px;
+	background: rgba(255, 255, 255, 0.1); /* Slightly transparent white */
+	border-radius: 15px; /* Rounded corners */
+	padding: 20px;
+	box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2); /* Stronger shadow for depth */
 }
 
 .users-container .header-name {
-  font-family: "Source Serif Pro";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 30px;
-  line-height: 25px;
-  color: #ffffff;
-}
-
-.users-container select:focus {
-  min-width: 90%;
-  width: auto;
+	font-size: 36px;
+	margin-bottom: 20px;
+	text-align: center;
+	color: #ffd700; /* Bright gold for headers */
 }
 
 .users-container .spec-select {
-  position: relative;
-  padding: 0px 7px;
-  /*width: 100%;*/
-  height: 27px;
-  background: #ffffff;
-  border: 1px solid #dddddd;
-  border-radius: 8px;
-  font-family: "GT Walsheim Pro";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 15px;
-  line-height: 26px;
-  color: #4f547b;
+	padding: 10px;
+	height: 40px;
+	background: #3b3b6e; /* Darker blue for select box */
+	border: 2px solid #f0e68c; /* Gold border */
+	border-radius: 8px;
+	color: #ffffff; /* White text */
+}
+
+.users-container select:focus {
+	outline: none; /* No outline on focus */
+	box-shadow: 0 0 5px #ffd700; /* Gold glow on focus */
+}
+
+.users-container table {
+	width: 100%;
+	border-collapse: collapse; /* Better spacing */
+	margin-top: 20px;
 }
 
 .users-container table td,
-table th {
-  text-align: center;
-  vertical-align: middle;
+.users-container table th {
+	text-align: center; /* Center text in table cells */
+	padding: 20px; /* Padding for spacing */
+	line-height: 1.5; /* Adjust line height for vertical centering */
+	border-bottom: 1px solid #f0e68c; /* Gold border */
+}
+
+.users-container table th {
+	background-color: rgba(255, 215, 0, 0.2); /* Light gold for header */
+	color: #ffd700; /* Bright gold for header text */
+}
+
+.users-container table th:hover {
+	color: #ffd700; /* Bright gold for header text on hover */
+	background-color: transparent; /* Ensure background color does not change */
+}
+
+/* Additional styles for statuses */
+.users-container .member-status {
+	color: #fff; /* White for text in select */
+}
+
+.users-container .member-status option[value="ACTIVE"] {
+	color: #4caf50; /* Green */
+}
+
+.users-container .member-status option[value="BLOCK"] {
+	color: #ff9800; /* Orange */
+}
+
+.users-container .member-status option[value="DELETE"] {
+	color: #f44336; /* Red */
 }
